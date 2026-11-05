@@ -9,131 +9,150 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
+
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      margin: 0;
       min-height: 100vh;
 
-      background-color: #C7DAD8;
+      font-family: "Kanit", sans-serif;
+
+      color: #5d4a4f;
+
+      background-color: #c7dad8;
 
       background-image:
-        radial-gradient(#F0EEF3 3px, transparent 3px);
+        radial-gradient(#f0eef3 2px, transparent 2px);
 
-      background-size: 28px 28px;
+      background-size: 24px 24px;
 
-      font-family: 'Kanit', sans-serif;
-      color: #5b4050;
-
-      padding: 35px 15px 50px;
+      padding: 40px 18px 60px;
     }
 
-    .container {
+    .page {
       width: 100%;
-      max-width: 850px;
+      max-width: 900px;
+
       margin: auto;
     }
 
-    /* หัวข้อ */
+    /* HEADER */
 
     .header {
       text-align: center;
 
-      background: rgba(240, 238, 243, 0.96);
+      background: rgba(240, 238, 243, 0.95);
 
-      border: 3px solid #CD5782;
-      border-radius: 30px;
+      border: 2px solid #cd5782;
 
-      padding: 30px 20px;
+      border-radius: 22px;
 
-      margin-bottom: 30px;
+      padding: 28px 20px;
+
+      margin-bottom: 35px;
 
       box-shadow:
-        0 12px 30px rgba(91, 64, 80, 0.15);
-    }
-
-    .tiny {
-      font-family: 'Itim', cursive;
-      font-size: 22px;
-      color: #CD5782;
-
-      margin-bottom: 5px;
+        0 10px 28px rgba(80, 55, 65, 0.12);
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
-      color: #CD5782;
+      font-family: "Playfair Display", serif;
 
-      font-size: clamp(38px, 9vw, 60px);
+      color: #cd5782;
 
-      margin-bottom: 8px;
+      font-size: 45px;
+
+      margin: 0 0 8px;
     }
 
     .subtitle {
-      font-family: 'Itim', cursive;
+      font-family: "Itim", cursive;
 
-      font-size: 20px;
+      font-size: 22px;
 
-      color: #6b5260;
+      color: #6d5960;
 
-      line-height: 1.6;
+      margin: 0;
     }
 
-    /* รูปภาพ */
+    /* MOMENT CARD */
 
-    .photo-list {
+    .moment {
       display: flex;
-      flex-direction: column;
 
-      gap: 28px;
+      align-items: center;
+
+      gap: 35px;
+
+      background: rgba(240, 238, 243, 0.94);
+
+      border: 2px solid rgba(205, 87, 130, 0.55);
+
+      border-radius: 20px;
+
+      padding: 20px;
 
       margin-bottom: 30px;
-    }
-
-    .memory {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-
-      background: rgba(240, 238, 243, 0.96);
-
-      border-radius: 25px;
-
-      padding: 14px;
 
       box-shadow:
-        0 10px 25px rgba(91, 64, 80, 0.15);
-
-      border: 2px solid rgba(205, 87, 130, 0.5);
-
-      transition: 0.3s ease;
+        0 10px 28px rgba(80, 55, 65, 0.12);
     }
 
-    .memory:hover {
-      transform: translateY(-5px);
-    }
-
-    .memory:nth-child(even) {
+    .moment:nth-child(even) {
       flex-direction: row-reverse;
     }
 
     .photo {
-      width: 45%;
+      width: 48%;
+
+      flex-shrink: 0;
+
+      background: #fffdf8;
+
+      padding: 12px 12px 30px;
+
+      border: 1px solid #d9c7b5;
+
+      box-shadow:
+        0 8px 20px rgba(80, 55, 65, 0.15);
+
+      transform: rotate(-1.5deg);
+    }
+
+    .moment:nth-child(even) .photo {
+      transform: rotate(1.5deg);
+    }
+
+    .photo img {
+      display: block;
+
+      width: 100%;
+
       aspect-ratio: 4 / 3;
 
       object-fit: cover;
 
-      border-radius: 18px;
+      background: #dcd3aa;
 
-      background: #DCD3AA;
+      border: 1px solid rgba(100, 80, 80, 0.15);
+    }
 
-      display: block;
+    .caption {
+      text-align: center;
+
+      font-family: "Itim", cursive;
+
+      color: #cd5782;
+
+      font-size: 21px;
+
+      margin-top: 10px;
     }
 
     .text {
@@ -145,312 +164,356 @@
     }
 
     .number {
-      font-family: 'Playfair Display', serif;
+      display: inline-block;
 
-      color: #CD5782;
+      width: 38px;
+      height: 38px;
 
-      font-size: 25px;
+      line-height: 38px;
 
-      margin-bottom: 5px;
+      border-radius: 50%;
+
+      background: #cd5782;
+
+      color: white;
+
+      font-family: "Itim", cursive;
+
+      font-size: 19px;
+
+      margin-bottom: 12px;
     }
 
     .text h2 {
-      font-family: 'Itim', cursive;
+      font-family: "Playfair Display", serif;
 
-      color: #CD5782;
+      color: #cd5782;
 
-      font-size: 27px;
+      font-size: 29px;
 
-      margin-bottom: 8px;
+      margin: 0 0 12px;
     }
 
     .text p {
-      font-family: 'Itim', cursive;
+      font-family: "Itim", cursive;
 
-      color: #6b5260;
+      font-size: 20px;
 
-      font-size: 18px;
+      line-height: 1.8;
 
-      line-height: 1.6;
+      margin: 0;
+
+      color: #5d4a4f;
     }
 
-    /* กล่องท้าย */
+    /* BUTTON */
 
-    .bottom {
+    .button-area {
       text-align: center;
 
-      background: rgba(240, 238, 243, 0.96);
-
-      border: 3px solid #CD5782;
-
-      border-radius: 30px;
-
-      padding: 28px 20px;
-
-      box-shadow:
-        0 12px 30px rgba(91, 64, 80, 0.15);
+      margin-top: 35px;
     }
 
-    .bottom p {
-      font-family: 'Itim', cursive;
-
-      color: #6b5260;
-
-      font-size: 21px;
-
-      margin-bottom: 18px;
-    }
-
-    .button {
+    .next-button {
       display: inline-block;
 
-      background: #CD5782;
+      padding: 13px 32px;
+
+      background: #cd5782;
 
       color: white;
 
       text-decoration: none;
 
-      padding: 13px 30px;
+      border-radius: 30px;
 
-      border-radius: 999px;
+      font-family: "Itim", cursive;
 
-      font-size: 16px;
+      font-size: 20px;
 
       box-shadow:
-        0 8px 18px rgba(205, 87, 130, 0.3);
+        0 7px 16px rgba(120, 60, 80, 0.2);
 
-      transition: 0.25s ease;
+      transition:
+        transform 0.2s ease;
     }
 
-    .button:hover {
+    .next-button:hover {
       transform: translateY(-3px);
     }
 
-    /* มือถือ */
+    /* MOBILE */
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
 
       body {
-        padding: 25px 13px 40px;
+        padding: 25px 12px 45px;
       }
 
-      .memory,
-      .memory:nth-child(even) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .moment,
+      .moment:nth-child(even) {
         flex-direction: column;
+
+        gap: 20px;
+
+        padding: 16px;
       }
 
       .photo {
         width: 100%;
+
+        transform: none !important;
       }
 
       .text {
-        padding: 8px 10px 15px;
+        width: 100%;
+
+        padding: 5px;
       }
 
       .text h2 {
-        font-size: 25px;
+        font-size: 26px;
       }
 
       .text p {
         font-size: 18px;
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="page">
 
-    <!-- HEADER -->
+  <!-- HEADER -->
 
-    <div class="header">
+  <div class="header">
 
-      <div class="tiny">
-        A few little moments ♡
-      </div>
+    <h1>
+      Little Moments ♡
+    </h1>
 
-      <h1>
-        Little Moments
-      </h1>
+    <p class="subtitle">
+      A few memories I'll always keep close to my heart.
+    </p>
 
-      <div class="subtitle">
-        รูปเล็ก ๆ ของคนพิเศษ<br>
-        ที่ทำให้วันธรรมดากลายเป็นวันที่น่าจดจำ
-      </div>
-
-    </div>
+  </div>
 
 
-    <!-- PHOTO 1 -->
+  <!-- PHOTO 1 -->
 
-    <div class="photo-list">
+  <div class="moment">
 
-      <div class="memory">
+    <div class="photo">
 
-        <img
-          src="photo1.jpg"
-          alt="Little moment 1"
-          class="photo"
-        >
+      <img
+        src="photo1.jpg"
+        alt="Our memory 1"
+      >
 
-        <div class="text">
-
-          <div class="number">
-            01
-          </div>
-
-          <h2>
-            The Beginning ♡
-          </h2>
-
-          <p>
-            ทุกอย่างอาจเริ่มจากช่วงเวลาเล็ก ๆ
-            แต่สำหรับฉัน มันมีความหมายมากกว่าที่คิด
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- PHOTO 2 -->
-
-      <div class="memory">
-
-        <img
-          src="photo2.jpg"
-          alt="Little moment 2"
-          class="photo"
-        >
-
-        <div class="text">
-
-          <div class="number">
-            02
-          </div>
-
-          <h2>
-            A Happy Day
-          </h2>
-
-          <p>
-            แค่ได้มีคุณอยู่ในวันนั้น
-            วันธรรมดาก็กลายเป็นวันที่ฉันอยากจำ
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- PHOTO 3 -->
-
-      <div class="memory">
-
-        <img
-          src="photo3.jpg"
-          alt="Little moment 3"
-          class="photo"
-        >
-
-        <div class="text">
-
-          <div class="number">
-            03
-          </div>
-
-          <h2>
-            Just Us ♡
-          </h2>
-
-          <p>
-            ไม่ต้องมีอะไรพิเศษเลย
-            แค่เป็นช่วงเวลาที่มีเราสองคนก็พอ
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- PHOTO 4 -->
-
-      <div class="memory">
-
-        <img
-          src="photo4.jpg"
-          alt="Little moment 4"
-          class="photo"
-        >
-
-        <div class="text">
-
-          <div class="number">
-            04
-          </div>
-
-          <h2>
-            One More Smile
-          </h2>
-
-          <p>
-            รอยยิ้มของคุณยังเป็นหนึ่งในสิ่งที่
-            ฉันชอบที่สุดเสมอ
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- PHOTO 5 -->
-
-      <div class="memory">
-
-        <img
-          src="photo5.jpg"
-          alt="Little moment 5"
-          class="photo"
-        >
-
-        <div class="text">
-
-          <div class="number">
-            05
-          </div>
-
-          <h2>
-            My Favorite ♡
-          </h2>
-
-          <p>
-            และไม่ว่าภาพไหนจะผ่านไป
-            คุณก็ยังเป็นคนโปรดของฉันอยู่ดี
-          </p>
-
-        </div>
-
+      <div class="caption">
+        The Beginning ♡
       </div>
 
     </div>
 
+    <div class="text">
 
-    <!-- BOTTOM -->
+      <div class="number">
+        01
+      </div>
 
-    <div class="bottom">
+      <h2>
+        The Beginning
+      </h2>
 
       <p>
-        พร้อมไปดูเซอร์ไพรส์ต่อหรือยัง? 🎂
+        ทุกเรื่องราวดี ๆ มักเริ่มต้นจากช่วงเวลาเล็ก ๆ
+        และฉันดีใจที่เรื่องราวของเราก็เริ่มต้นขึ้นเหมือนกัน ♡
       </p>
-
-      <a href="cake.html" class="button">
-        Let's Celebrate →
-      </a>
 
     </div>
 
   </div>
+
+
+  <!-- PHOTO 2 -->
+
+  <div class="moment">
+
+    <div class="photo">
+
+      <img
+        src="photo2.jpg"
+        alt="Our memory 2"
+      >
+
+      <div class="caption">
+        A Happy Day ♡
+      </div>
+
+    </div>
+
+    <div class="text">
+
+      <div class="number">
+        02
+      </div>
+
+      <h2>
+        A Happy Day
+      </h2>
+
+      <p>
+        บางวันอาจไม่ได้มีอะไรพิเศษมากมาย
+        แต่แค่มีเธออยู่ในวันนั้น
+        มันก็กลายเป็นวันที่น่าจดจำแล้ว
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- PHOTO 3 -->
+
+  <div class="moment">
+
+    <div class="photo">
+
+      <img
+        src="photo3.jpg"
+        alt="Our memory 3"
+      >
+
+      <div class="caption">
+        Just Us ♡
+      </div>
+
+    </div>
+
+    <div class="text">
+
+      <div class="number">
+        03
+      </div>
+
+      <h2>
+        Just Us
+      </h2>
+
+      <p>
+        ฉันชอบช่วงเวลาที่เราได้เป็นตัวเอง
+        ได้หัวเราะ ได้พูดคุย
+        และได้ใช้เวลาอยู่ด้วยกันแบบเรียบง่าย
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- PHOTO 4 -->
+
+  <div class="moment">
+
+    <div class="photo">
+
+      <img
+        src="photo4.jpg"
+        alt="Our memory 4"
+      >
+
+      <div class="caption">
+        One More Smile ♡
+      </div>
+
+    </div>
+
+    <div class="text">
+
+      <div class="number">
+        04
+      </div>
+
+      <h2>
+        One More Smile
+      </h2>
+
+      <p>
+        ถ้ามีสิ่งหนึ่งที่ฉันอยากเห็นบ่อย ๆ
+        ก็คงเป็นรอยยิ้มของเธอ
+        เพราะมันเป็นหนึ่งในสิ่งที่ทำให้ฉันมีความสุข
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- PHOTO 5 -->
+
+  <div class="moment">
+
+    <div class="photo">
+
+      <img
+        src="photo5.jpg"
+        alt="Our memory 5"
+      >
+
+      <div class="caption">
+        My Favorite ♡
+      </div>
+
+    </div>
+
+    <div class="text">
+
+      <div class="number">
+        05
+      </div>
+
+      <h2>
+        My Favorite
+      </h2>
+
+      <p>
+        จากทุกความทรงจำที่ผ่านมา
+        ฉันหวังว่าเราจะมีช่วงเวลาใหม่ ๆ
+        ให้ได้เก็บไว้ด้วยกันอีกเยอะ ๆ เลยนะ ♡
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- NEXT -->
+
+  <div class="button-area">
+
+    <a
+      href="cake.html"
+      class="next-button"
+    >
+      Let's Celebrate ♡
+    </a>
+
+  </div>
+
+</div>
 
 </body>
 </html>
