@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Birthday Letter ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      font-family: "Kanit", sans-serif;
+
+      background-color: #c7dad8;
+
+      background-image:
+        radial-gradient(#f0eef3 2px, transparent 2px);
+
+      background-size: 24px 24px;
+
+      color: #5d4a4f;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px 15px;
+
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 650px;
+      text-align: center;
+    }
+
+    /* TITLE */
+
+    h1 {
+      font-family: "Playfair Display", serif;
+
+      color: #cd5782;
+
+      font-size: 42px;
+
+      margin: 0 0 8px;
+    }
+
+    .subtitle {
+      font-family: "Itim", cursive;
+
+      font-size: 22px;
+
+      color: #6d5960;
+
+      margin-bottom: 30px;
+    }
+
+    /* ENVELOPE */
+
+    .envelope-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      min-height: 370px;
+    }
+
+    .envelope {
+      position: relative;
+
+      width: 360px;
+      height: 240px;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.3s ease;
+    }
+
+    .envelope:hover {
+      transform: translateY(-5px);
+    }
+
+    /* BACK */
+
+    .envelope-back {
+      position: absolute;
+
+      inset: 0;
+
+      background: #f0eef3;
+
+      border: 3px solid #cd5782;
+
+      border-radius: 8px;
+
+      box-shadow:
+        0 12px 30px rgba(80,55,65,0.18);
+
+      z-index: 1;
+    }
+
+    /* LETTER INSIDE */
+
+    .letter-preview {
+      position: absolute;
+
+      width: 310px;
+      height: 190px;
+
+      left: 25px;
+      bottom: 15px;
+
+      background: #fffdf8;
+
+      border: 1px solid #e4d9ca;
+
+      z-index: 2;
+
+      padding: 25px;
+
+      text-align: left;
+
+      color: #6b595d;
+
+      font-family: "Itim", cursive;
+
+      font-size: 17px;
+
+      transform: translateY(5px);
+
+      transition:
+        transform 0.6s ease;
+    }
+
+    /* FRONT */
+
+    .envelope-front {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 150px;
+
+      background: #f7dce6;
+
+      border: 3px solid #cd5782;
+
+      border-top: none;
+
+      z-index: 4;
+
+      clip-path: polygon(
+        0 0,
+        50% 58%,
+        100% 0,
+        100% 100%,
+        0 100%
+      );
+    }
+
+    /* FLAP */
+
+    .flap {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 0;
+      height: 0;
+
+      border-left: 180px solid transparent;
+      border-right: 180px solid transparent;
+      border-top: 135px solid #f5cbd9;
+
+      z-index: 5;
+
+      transform-origin: top center;
+
+      transition:
+        transform 0.7s ease;
+    }
+
+    /* HEART */
+
+    .heart {
+      position: absolute;
+
+      left: 50%;
+      top: 55%;
+
+      transform:
+        translate(-50%, -50%);
+
+      width: 48px;
+      height: 48px;
+
+      background: #cd5782;
+
+      z-index: 7;
+
+      transform-origin: center;
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+      box-shadow:
+        0 4px 10px rgba(130,60,85,0.2);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+
+      position: absolute;
+
+      width: 48px;
+      height: 48px;
+
+      background: #cd5782;
+
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -24px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 24px;
+    }
+
+    .heart {
+      transform:
+        translate(-50%, -50%)
+        rotate(45deg)
+        scale(0.7);
+    }
+
+    /* OPEN STATE */
+
+    .envelope.open .flap {
+      transform: rotateX(180deg);
+
+      z-index: 1;
+    }
+
+    .envelope.open .heart {
+      opacity: 0;
+
+      transform:
+        translate(-50%, -50%)
+        rotate(45deg)
+        scale(0.4);
+    }
+
+    .envelope.open .letter-preview {
+      transform: translateY(-55px);
+    }
+
+    .hint {
+      font-family: "Itim", cursive;
+
+      color: #cd5782;
+
+      font-size: 20px;
+
+      margin-top: 15px;
+    }
+
+    /* FULL LETTER */
+
+    .letter-overlay {
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(199, 218, 216, 0.96);
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding: 20px;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.5s ease;
+      
+      z-index: 100;
+    }
+
+    .letter-overlay.show {
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+    }
+
+    .letter-paper {
+      width: min(680px, 100%);
+
+      max-height: 90vh;
+
+      overflow-y: auto;
+
+      background: #fffdf8;
+
+      border: 2px solid #d9c7b5;
+
+      border-radius: 8px;
+
+      box-shadow:
+        0 15px 50px rgba(70,50,55,0.22);
+
+      padding: 45px 45px 50px;
+
+      text-align: left;
+
+      position: relative;
+
+      animation: paperIn 0.6s ease;
+    }
+
+    @keyframes paperIn {
+
+      from {
+        transform:
+          translateY(50px)
+          scale(0.96);
+
+        opacity: 0;
+      }
+
+      to {
+        transform:
+          translateY(0)
+          scale(1);
+
+        opacity: 1;
+      }
+
+    }
+
+    .paper-title {
+      text-align: center;
+
+      font-family: "Playfair Display", serif;
+
+      color: #cd5782;
+
+      font-size: 32px;
+
+      margin-bottom: 28px;
+    }
+
+    .letter-paper p {
+      font-family: "Itim", cursive;
+
+      font-size: 20px;
+
+      line-height: 2;
+
+      color: #5f5055;
+
+      margin: 0 0 22px;
+    }
+
+    .letter-paper .hello {
+      color: #cd5782;
+
+      font-size: 25px;
+
+      margin-bottom: 25px;
+    }
+
+    .signature {
+      text-align: right;
+
+      margin-top: 35px !important;
+
+      color: #cd5782 !important;
+
+      font-size: 23px !important;
+    }
+
+    /* CLOSE */
+
+    .close-letter {
+      display: block;
+
+      margin: 30px auto 0;
+
+      border: none;
+
+      background: #cd5782;
+
+      color: white;
+
+      border-radius: 30px;
+
+      padding: 11px 28px;
+
+      font-family: "Itim", cursive;
+
+      font-size: 18px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 5px 12px rgba(120,60,80,0.18);
+    }
+
+    .close-letter:hover {
+      background: #b94770;
+    }
+
+    /* NEXT */
+
+    .next-page {
+      display: none;
+
+      margin-top: 25px;
+
+      padding: 12px 30px;
+
+      background: #cd5782;
+
+      color: white;
+
+      text-decoration: none;
+
+      border-radius: 30px;
+
+      font-family: "Itim", cursive;
+
+      font-size: 19px;
+    }
+
+    .next-page.show {
+      display: inline-block;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 25px 12px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .envelope {
+        width: 310px;
+        height: 210px;
+      }
+
+      .flap {
+        border-left-width: 155px;
+        border-right-width: 155px;
+        border-top-width: 118px;
+      }
+
+      .envelope-front {
+        height: 130px;
+      }
+
+      .letter-preview {
+        width: 265px;
+        height: 165px;
+
+        left: 22px;
+
+        font-size: 15px;
+      }
+
+      .letter-paper {
+        max-height: 92vh;
+
+        padding: 32px 24px 40px;
+      }
+
+      .paper-title {
+        font-size: 28px;
+      }
+
+      .letter-paper p {
+        font-size: 18px;
+        line-height: 1.9;
+      }
+
+      .letter-paper .hello {
+        font-size: 22px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <h1>
+    A Birthday Letter ♡
+  </h1>
+
+  <div class="subtitle">
+    There's something I want you to read...
+  </div>
+
+
+  <div class="envelope-area">
+
+    <div
+      class="envelope"
+      id="envelope"
+      onclick="openEnvelope()"
+    >
+
+      <div class="envelope-back"></div>
+
+
+      <div class="letter-preview">
+
+        Happy Birthday ♡
+
+        <br><br>
+
+        To someone very special...
+
+      </div>
+
+
+      <div class="envelope-front"></div>
+
+
+      <div class="flap"></div>
+
+
+      <div class="heart"></div>
+
+    </div>
+
+  </div>
+
+
+  <div class="hint" id="hint">
+    Click the envelope to open ♡
+  </div>
+
+
+  <a
+    href="final.html"
+    class="next-page"
+    id="nextPage"
+  >
+    One Last Surprise ♡
+  </a>
+
+</div>
+
+
+<!-- FULL LETTER -->
+
+<div
+  class="letter-overlay"
+  id="letterOverlay"
+>
+
+  <div class="letter-paper">
+
+    <div class="paper-title">
+      Happy Birthday, Seolho ♡
+    </div>
+
+
+    <p class="hello">
+      ถึงคนพิเศษของฉัน
+    </p>
+
+
+    <p>
+      สุขสันต์วันเกิดนะ ♡
+      <br>
+      วันนี้เป็นวันของเธอ และฉันอยากให้เธอรู้ว่า
+      ฉันดีใจมาก ๆ ที่ครั้งหนึ่งเราได้เดินเข้ามา
+      ในชีวิตของกันและกัน
+    </p>
+
+
+    <p>
+      ขอบคุณสำหรับทุกช่วงเวลาที่เราเคยมีด้วยกัน
+      ไม่ว่าจะเป็นวันที่หัวเราะด้วยกัน
+      วันที่คิดถึงกันมาก ๆ
+      หรือแม้แต่วันที่เราไม่เข้าใจกัน
+      ทุกอย่างล้วนเป็นความทรงจำที่มีความหมายสำหรับฉัน
+    </p>
+
+
+    <p>
+      ฉันอาจไม่ได้เป็นคนที่สมบูรณ์แบบ
+      และบางครั้งอาจทำอะไรที่ทำให้เธอเหนื่อยหรือเสียใจ
+      แต่สิ่งหนึ่งที่ฉันอยากให้เธอรู้เสมอคือ
+      ความรู้สึกที่ฉันมีให้เธอเป็นเรื่องจริง
+    </p>
+
+
+    <p>
+      ในวันเกิดปีนี้ ฉันขอให้เธอมีความสุขมาก ๆ
+      ขอให้ทุกสิ่งที่เธอตั้งใจไว้ค่อย ๆ สำเร็จ
+      ขอให้มีคนดี ๆ อยู่รอบตัว
+      และขอให้เธอได้ใช้ชีวิตในแบบที่ตัวเองต้องการ
+    </p>
+
+
+    <p>
+      ไม่ว่าจะเกิดอะไรขึ้นต่อจากนี้
+      ฉันก็ยังอยากขอบคุณเธอ
+      สำหรับการเป็นส่วนหนึ่งของช่วงเวลาที่สวยงาม
+      ในชีวิตของฉัน
+    </p>
+
+
+    <p>
+      ขอให้วันเกิดปีนี้เป็นจุดเริ่มต้นของ
+      ปีที่เต็มไปด้วยรอยยิ้ม ความสุข
+      และเรื่องดี ๆ ที่เธอสมควรได้รับนะ ♡
+    </p>
+
+
+    <p class="signature">
+      With all my love,<br>
+      Kwan ♡
+    </p>
+
+
+    <button
+      class="close-letter"
+      onclick="closeLetter()"
+    >
+      Close Letter
+    </button>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  function openEnvelope() {
+
+    const envelope =
+      document.getElementById("envelope");
+
+    const hint =
+      document.getElementById("hint");
+
+    const overlay =
+      document.getElementById("letterOverlay");
+
+    envelope.classList.add("open");
+
+    hint.style.opacity = "0";
+
+    setTimeout(() => {
+
+      overlay.classList.add("show");
+
+    }, 900);
+
+  }
+
+
+  function closeLetter() {
+
+    const overlay =
+      document.getElementById("letterOverlay");
+
+    overlay.classList.remove("show");
+
+    document.getElementById("nextPage")
+      .classList.add("show");
+
+  }
+
+</script>
+
+</body>
+</html>
