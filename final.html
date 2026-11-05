@@ -48,11 +48,8 @@
       text-align: center;
 
       position: relative;
-
       z-index: 2;
     }
-
-    /* TOP */
 
     .small-title {
       font-family: "Itim", cursive;
@@ -86,8 +83,6 @@
       margin-bottom: 28px;
     }
 
-    /* PHOTO */
-
     .photo-frame {
       width: min(430px, 90vw);
 
@@ -104,14 +99,11 @@
 
       transform: rotate(-1.5deg);
 
-      transition:
-        transform 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .photo-frame:hover {
-      transform:
-        rotate(0deg)
-        translateY(-4px);
+      transform: rotate(0deg) translateY(-4px);
     }
 
     .photo-frame img {
@@ -137,8 +129,6 @@
 
       font-size: 21px;
     }
-
-    /* MESSAGE */
 
     .message-card {
       width: 100%;
@@ -178,8 +168,6 @@
 
       font-size: 26px !important;
     }
-
-    /* MUSIC */
 
     .music-button {
       display: inline-flex;
@@ -223,8 +211,6 @@
       transform: scale(0.97);
     }
 
-    /* FINAL */
-
     .final-message {
       margin-top: 30px;
 
@@ -245,8 +231,6 @@
       margin-top: 8px;
     }
 
-    /* HEARTS */
-
     .heart {
       position: fixed;
 
@@ -266,10 +250,7 @@
     @keyframes floatUp {
 
       0% {
-        transform:
-          translateY(0)
-          rotate(0deg);
-
+        transform: translateY(0) rotate(0deg);
         opacity: 0;
       }
 
@@ -278,16 +259,11 @@
       }
 
       100% {
-        transform:
-          translateY(-110vh)
-          rotate(30deg);
-
+        transform: translateY(-110vh) rotate(30deg);
         opacity: 0;
       }
 
     }
-
-    /* MOBILE */
 
     @media (max-width: 600px) {
 
@@ -317,7 +293,6 @@
 
       .message-card p {
         font-size: 19px;
-
         line-height: 1.85;
       }
 
@@ -336,178 +311,174 @@
 
 <body>
 
-  <div class="page">
+<div class="page">
 
-    <div class="small-title">
-      One Last Surprise ♡
-    </div>
+  <div class="small-title">
+    One Last Surprise ♡
+  </div>
 
-    <h1>
-      Happy Birthday ♡
-    </h1>
+  <h1>
+    Happy Birthday ♡
+  </h1>
 
-    <div class="subtitle">
-      And this is the last little thing I made for you...
-    </div>
-
-
-    <!-- PHOTO -->
-
-    <div class="photo-frame">
-
-      <img
-        src="final-photo.jpg"
-        alt="Our favorite photo"
-      >
-
-      <div class="photo-caption">
-        One of my favorite memories with you ♡
-      </div>
-
-    </div>
+  <div class="subtitle">
+    And this is the last little thing I made for you...
+  </div>
 
 
-    <!-- MESSAGE -->
+  <!-- PHOTO -->
 
-    <div class="message-card">
+  <div class="photo-frame">
 
-      <p class="highlight">
-        Happy Birthday, Seolho ♡
-      </p>
-
-      <p>
-        ถ้าเธอมาถึงหน้านี้แล้ว
-        ก็แปลว่าเธอเปิดเซอร์ไพรส์ของฉันมาจนครบแล้วนะ
-      </p>
-
-      <p>
-        ฉันหวังว่าในวันเกิดปีนี้
-        เธอจะยิ้มได้เยอะ ๆ
-        และรู้ไว้ว่ามีใครบางคน
-        ตั้งใจทำสิ่งเล็ก ๆ เหล่านี้ให้เธอมากแค่ไหน
-      </p>
-
-      <p>
-        ขอบคุณที่เข้ามาเป็นส่วนหนึ่ง
-        ในชีวิตของฉัน
-        และขอบคุณสำหรับทุกความทรงจำ
-        ที่เราได้สร้างด้วยกัน
-      </p>
-
-      <p>
-        ไม่ว่าจะมีอีกกี่วันเกิด
-        ฉันก็หวังว่าจะได้เห็นเธอมีความสุข
-        และได้อยู่ข้าง ๆ เธอ
-        ในวันที่สำคัญของเธอเสมอ ♡
-      </p>
-
-    </div>
-
-
-    <!-- MUSIC -->
-
-    <button
-      class="music-button"
-      onclick="toggleMusic()"
-      id="musicButton"
+    <img
+      src="final-photo.jpg"
+      alt="Our favorite photo"
     >
-      ♫ Play Our Song
-    </button>
 
-
-    <!-- FINAL -->
-
-    <div class="final-message">
-
-      Happy Birthday, my love ♡
-
-      <div class="tiny">
-        This is the end of the surprise...
-        but not the end of our story.
-      </div>
-
+    <div class="photo-caption">
+      One of my favorite memories with you ♡
     </div>
+
+  </div>
+
+
+  <!-- MESSAGE -->
+
+  <div class="message-card">
+
+    <p class="highlight">
+      Happy Birthday, Seolho ♡
+    </p>
+
+    <p>
+      ถ้าเธอมาถึงหน้านี้แล้ว
+      ก็แปลว่าเธอเปิดเซอร์ไพรส์ของฉันมาจนครบแล้วนะ
+    </p>
+
+    <p>
+      ฉันหวังว่าในวันเกิดปีนี้
+      เธอจะยิ้มได้เยอะ ๆ
+      และรู้ไว้ว่ามีใครบางคน
+      ตั้งใจทำสิ่งเล็ก ๆ เหล่านี้ให้เธอมากแค่ไหน
+    </p>
+
+    <p>
+      ขอบคุณที่เข้ามาเป็นส่วนหนึ่ง
+      ในชีวิตของฉัน
+      และขอบคุณสำหรับทุกความทรงจำ
+      ที่เราได้สร้างด้วยกัน
+    </p>
+
+    <p>
+      ไม่ว่าจะมีอีกกี่วันเกิด
+      ฉันก็หวังว่าจะได้เห็นเธอมีความสุข
+      และได้อยู่ข้าง ๆ เธอ
+      ในวันที่สำคัญของเธอเสมอ ♡
+    </p>
 
   </div>
 
 
   <!-- MUSIC -->
 
-  <audio
-    id="song"
-    loop
+  <button
+    class="music-button"
+    onclick="toggleMusic()"
+    id="musicButton"
   >
-    <source
-      src="https://res.cloudinary.com/njpn5bqv/video/upload/v1793873178/song.mp3"
-      type="audio/mpeg"
-    >
-  </audio>
+    ♫ Play Our Song
+  </button>
 
 
-  <script>
+  <div class="final-message">
 
-    const song =
-      document.getElementById("song");
+    Happy Birthday, my love ♡
 
-    const button =
-      document.getElementById("musicButton");
+    <div class="tiny">
+      This is the end of the surprise...
+      but not the end of our story.
+    </div>
 
+  </div>
 
-    function toggleMusic() {
-
-      if (song.paused) {
-
-        song.play();
-
-        button.innerHTML =
-          "♫ Pause Our Song";
-
-      } else {
-
-        song.pause();
-
-        button.innerHTML =
-          "♫ Play Our Song";
-
-      }
-
-    }
+</div>
 
 
-    /* FLOATING HEARTS */
+<!-- NEW BIRTHDAY SONG -->
 
-    function createHeart() {
+<audio
+  id="song"
+  loop
+>
+  <source
+    src="https://res.cloudinary.com/njpn5bqv/video/upload/v1793880302/WWJ_-_%E0%B8%84%E0%B8%B3%E0%B8%AD%E0%B8%A7%E0%B8%A2%E0%B8%9E%E0%B8%A3_Happy_Birthday_Official_Audio.mp3"
+    type="audio/mpeg"
+  >
+</audio>
 
-      const heart =
-        document.createElement("div");
 
-      heart.className = "heart";
+<script>
 
-      heart.innerHTML = "♡";
+  const song =
+    document.getElementById("song");
 
-      heart.style.left =
-        Math.random() * 100 + "vw";
+  const button =
+    document.getElementById("musicButton");
 
-      heart.style.fontSize =
-        (14 + Math.random() * 14) + "px";
 
-      heart.style.animationDuration =
-        (6 + Math.random() * 5) + "s";
+  function toggleMusic() {
 
-      document.body.appendChild(heart);
+    if (song.paused) {
 
-      setTimeout(() => {
+      song.play();
 
-        heart.remove();
+      button.innerHTML =
+        "♫ Pause Our Song";
 
-      }, 11000);
+    } else {
+
+      song.pause();
+
+      button.innerHTML =
+        "♫ Play Our Song";
 
     }
 
+  }
 
-    setInterval(createHeart, 900);
 
-  </script>
+  function createHeart() {
+
+    const heart =
+      document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "♡";
+
+    heart.style.left =
+      Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+      (14 + Math.random() * 14) + "px";
+
+    heart.style.animationDuration =
+      (6 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+
+      heart.remove();
+
+    }, 11000);
+
+  }
+
+
+  setInterval(createHeart, 900);
+
+</script>
 
 </body>
 </html>
