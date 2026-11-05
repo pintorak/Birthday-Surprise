@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>One Last Surprise ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      font-family: "Kanit", sans-serif;
+
+      background-color: #c7dad8;
+
+      background-image:
+        radial-gradient(#f0eef3 2px, transparent 2px);
+
+      background-size: 24px 24px;
+
+      color: #5d4a4f;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 35px 15px;
+
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 720px;
+
+      text-align: center;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+    /* TOP */
+
+    .small-title {
+      font-family: "Itim", cursive;
+
+      color: #cd5782;
+
+      font-size: 22px;
+
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+
+      color: #cd5782;
+
+      font-size: 48px;
+
+      margin: 0 0 12px;
+
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-family: "Itim", cursive;
+
+      font-size: 22px;
+
+      color: #6d5960;
+
+      margin-bottom: 28px;
+    }
+
+    /* PHOTO */
+
+    .photo-frame {
+      width: min(430px, 90vw);
+
+      margin: 0 auto 28px;
+
+      padding: 14px 14px 38px;
+
+      background: #f0eef3;
+
+      border: 2px solid rgba(205, 87, 130, 0.55);
+
+      box-shadow:
+        0 12px 35px rgba(80, 55, 65, 0.2);
+
+      transform: rotate(-1.5deg);
+
+      transition:
+        transform 0.3s ease;
+    }
+
+    .photo-frame:hover {
+      transform:
+        rotate(0deg)
+        translateY(-4px);
+    }
+
+    .photo-frame img {
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 4 / 3;
+
+      object-fit: cover;
+
+      background: #dcd3aa;
+
+      border: 1px solid rgba(120, 90, 90, 0.2);
+    }
+
+    .photo-caption {
+      margin-top: 14px;
+
+      font-family: "Itim", cursive;
+
+      color: #cd5782;
+
+      font-size: 21px;
+    }
+
+    /* MESSAGE */
+
+    .message-card {
+      width: 100%;
+
+      background: rgba(240, 238, 243, 0.94);
+
+      border: 2px solid #cd5782;
+
+      border-radius: 20px;
+
+      padding: 30px 25px;
+
+      box-shadow:
+        0 10px 30px rgba(80, 55, 65, 0.12);
+
+      margin-bottom: 25px;
+    }
+
+    .message-card p {
+      font-family: "Itim", cursive;
+
+      font-size: 21px;
+
+      line-height: 1.9;
+
+      margin: 0 0 18px;
+
+      color: #5d4a4f;
+    }
+
+    .message-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      color: #cd5782;
+
+      font-size: 26px !important;
+    }
+
+    /* MUSIC */
+
+    .music-button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      border: none;
+
+      background: #cd5782;
+
+      color: white;
+
+      padding: 12px 28px;
+
+      border-radius: 30px;
+
+      font-family: "Itim", cursive;
+
+      font-size: 19px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 6px 15px rgba(120, 60, 80, 0.2);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .music-button:hover {
+      transform: translateY(-2px);
+
+      background: #b94770;
+    }
+
+    .music-button:active {
+      transform: scale(0.97);
+    }
+
+    /* FINAL */
+
+    .final-message {
+      margin-top: 30px;
+
+      font-family: "Itim", cursive;
+
+      color: #cd5782;
+
+      font-size: 25px;
+
+      line-height: 1.7;
+    }
+
+    .tiny {
+      font-size: 17px;
+
+      color: #6d5960;
+
+      margin-top: 8px;
+    }
+
+    /* HEARTS */
+
+    .heart {
+      position: fixed;
+
+      bottom: -30px;
+
+      font-size: 18px;
+
+      color: #cd5782;
+
+      opacity: 0.55;
+
+      pointer-events: none;
+
+      animation: floatUp linear forwards;
+    }
+
+    @keyframes floatUp {
+
+      0% {
+        transform:
+          translateY(0)
+          rotate(0deg);
+
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.6;
+      }
+
+      100% {
+        transform:
+          translateY(-110vh)
+          rotate(30deg);
+
+        opacity: 0;
+      }
+
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 28px 12px;
+      }
+
+      h1 {
+        font-size: 37px;
+      }
+
+      .small-title {
+        font-size: 20px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .photo-frame {
+        padding: 10px 10px 30px;
+      }
+
+      .message-card {
+        padding: 25px 18px;
+      }
+
+      .message-card p {
+        font-size: 19px;
+
+        line-height: 1.85;
+      }
+
+      .highlight {
+        font-size: 23px !important;
+      }
+
+      .final-message {
+        font-size: 22px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <div class="small-title">
+      One Last Surprise ♡
+    </div>
+
+    <h1>
+      Happy Birthday ♡
+    </h1>
+
+    <div class="subtitle">
+      And this is the last little thing I made for you...
+    </div>
+
+
+    <!-- PHOTO -->
+
+    <div class="photo-frame">
+
+      <img
+        src="final-photo.jpg"
+        alt="Our favorite photo"
+      >
+
+      <div class="photo-caption">
+        One of my favorite memories with you ♡
+      </div>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+
+    <div class="message-card">
+
+      <p class="highlight">
+        Happy Birthday, Seolho ♡
+      </p>
+
+      <p>
+        ถ้าเธอมาถึงหน้านี้แล้ว
+        ก็แปลว่าเธอเปิดเซอร์ไพรส์ของฉันมาจนครบแล้วนะ
+      </p>
+
+      <p>
+        ฉันหวังว่าในวันเกิดปีนี้
+        เธอจะยิ้มได้เยอะ ๆ
+        และรู้ไว้ว่ามีใครบางคน
+        ตั้งใจทำสิ่งเล็ก ๆ เหล่านี้ให้เธอมากแค่ไหน
+      </p>
+
+      <p>
+        ขอบคุณที่เข้ามาเป็นส่วนหนึ่ง
+        ในชีวิตของฉัน
+        และขอบคุณสำหรับทุกความทรงจำ
+        ที่เราได้สร้างด้วยกัน
+      </p>
+
+      <p>
+        ไม่ว่าจะมีอีกกี่วันเกิด
+        ฉันก็หวังว่าจะได้เห็นเธอมีความสุข
+        และได้อยู่ข้าง ๆ เธอ
+        ในวันที่สำคัญของเธอเสมอ ♡
+      </p>
+
+    </div>
+
+
+    <!-- MUSIC -->
+
+    <button
+      class="music-button"
+      onclick="toggleMusic()"
+      id="musicButton"
+    >
+      ♫ Play Our Song
+    </button>
+
+
+    <!-- FINAL -->
+
+    <div class="final-message">
+
+      Happy Birthday, my love ♡
+
+      <div class="tiny">
+        This is the end of the surprise...
+        but not the end of our story.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- MUSIC -->
+
+  <audio
+    id="song"
+    loop
+  >
+    <source
+      src="https://res.cloudinary.com/njpn5bqv/video/upload/v1793873178/song.mp3"
+      type="audio/mpeg"
+    >
+  </audio>
+
+
+  <script>
+
+    const song =
+      document.getElementById("song");
+
+    const button =
+      document.getElementById("musicButton");
+
+
+    function toggleMusic() {
+
+      if (song.paused) {
+
+        song.play();
+
+        button.innerHTML =
+          "♫ Pause Our Song";
+
+      } else {
+
+        song.pause();
+
+        button.innerHTML =
+          "♫ Play Our Song";
+
+      }
+
+    }
+
+
+    /* FLOATING HEARTS */
+
+    function createHeart() {
+
+      const heart =
+        document.createElement("div");
+
+      heart.className = "heart";
+
+      heart.innerHTML = "♡";
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (14 + Math.random() * 14) + "px";
+
+      heart.style.animationDuration =
+        (6 + Math.random() * 5) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+
+        heart.remove();
+
+      }, 11000);
+
+    }
+
+
+    setInterval(createHeart, 900);
+
+  </script>
+
+</body>
+</html>
