@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Make a Wish ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: #C7DAD8;
+
+      background-image:
+        radial-gradient(#F0EEF3 3px, transparent 3px);
+
+      background-size: 28px 28px;
+
+      font-family: 'Kanit', sans-serif;
+      color: #5b4050;
+
+      padding: 25px 15px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(240, 238, 243, 0.96);
+
+      border: 3px solid #CD5782;
+      border-radius: 32px;
+
+      padding: 35px 20px 40px;
+
+      box-shadow:
+        0 12px 30px rgba(91, 64, 80, 0.15);
+    }
+
+    .small-title {
+      font-family: 'Itim', cursive;
+
+      color: #CD5782;
+
+      font-size: 24px;
+
+      margin-bottom: 5px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+
+      color: #CD5782;
+
+      font-size: clamp(36px, 9vw, 58px);
+
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-family: 'Itim', cursive;
+
+      color: #6b5260;
+
+      font-size: 20px;
+
+      line-height: 1.5;
+
+      margin-bottom: 20px;
+    }
+
+    .instruction {
+      font-family: 'Itim', cursive;
+
+      color: #CD5782;
+
+      font-size: 19px;
+
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       CAKE
+    ========================= */
+
+    .cake-area {
+      position: relative;
+
+      width: 320px;
+      height: 285px;
+
+      margin: 0 auto 20px;
+    }
+
+    .cake {
+      position: absolute;
+
+      bottom: 20px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 240px;
+      height: 125px;
+    }
+
+    /* ชั้นล่างของเค้ก */
+
+    .cake-bottom {
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      width: 240px;
+      height: 82px;
+
+      background: #CD5782;
+
+      border-radius: 12px 12px 20px 20px;
+
+      box-shadow:
+        inset 0 -8px rgba(91, 64, 80, 0.08);
+    }
+
+    /* ครีมด้านบน */
+
+    .cake-top {
+      position: absolute;
+
+      top: 28px;
+      left: 0;
+
+      width: 240px;
+      height: 55px;
+
+      background: #DCD3AA;
+
+      border-radius: 50%;
+
+      z-index: 2;
+    }
+
+    /* ครีมตก */
+
+    .cream {
+      position: absolute;
+
+      top: 43px;
+
+      width: 240px;
+      height: 35px;
+
+      z-index: 4;
+    }
+
+    .cream span {
+      position: absolute;
+
+      width: 44px;
+      height: 27px;
+
+      background: #F0EEF3;
+
+      border-radius: 0 0 25px 25px;
+    }
+
+    .cream span:nth-child(1) {
+      left: 8px;
+    }
+
+    .cream span:nth-child(2) {
+      left: 54px;
+    }
+
+    .cream span:nth-child(3) {
+      left: 100px;
+    }
+
+    .cream span:nth-child(4) {
+      left: 146px;
+    }
+
+    .cream span:nth-child(5) {
+      left: 192px;
+    }
+
+    /* ชื่อบนเค้ก */
+
+    .cake-name {
+      position: absolute;
+
+      z-index: 5;
+
+      left: 50%;
+      top: 63px;
+
+      transform: translateX(-50%);
+
+      width: 205px;
+
+      font-family: 'Itim', cursive;
+
+      font-size: 25px;
+
+      color: #CD5782;
+
+      text-shadow:
+        0 1px 0 #F0EEF3;
+
+      white-space: nowrap;
+    }
+
+    .cake-heart {
+      font-size: 16px;
+      margin-left: 3px;
+    }
+
+    /* =========================
+       CANDLES
+    ========================= */
+
+    .candles {
+      position: absolute;
+
+      top: 0;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      display: flex;
+
+      gap: 20px;
+
+      z-index: 10;
+    }
+
+    .candle {
+      position: relative;
+
+      width: 22px;
+      height: 65px;
+
+      background: #CD5782;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+
+      transition: 0.25s ease;
+    }
+
+    .candle:nth-child(2) {
+      background: #DCD3AA;
+    }
+
+    .candle:nth-child(3) {
+      background: #CD5782;
+    }
+
+    .candle:nth-child(4) {
+      background: #DCD3AA;
+    }
+
+    .candle:nth-child(5) {
+      background: #CD5782;
+    }
+
+    .candle:hover {
+      transform: translateY(-5px);
+    }
+
+    .flame {
+      position: absolute;
+
+      top: -25px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 17px;
+      height: 25px;
+
+      background: #CD5782;
+
+      border-radius: 50%;
+
+      animation: flicker 0.8s infinite alternate;
+
+      box-shadow:
+        0 0 15px rgba(205, 87, 130, 0.5);
+    }
+
+    .flame::after {
+      content: "";
+
+      position: absolute;
+
+      width: 7px;
+      height: 12px;
+
+      left: 5px;
+      top: 5px;
+
+      background: #F0EEF3;
+
+      border-radius: 50%;
+    }
+
+    .candle.blown .flame {
+      display: none;
+    }
+
+    .candle.blown {
+      opacity: 0.55;
+    }
+
+    @keyframes flicker {
+      from {
+        transform: translateX(-50%) scale(1);
+      }
+
+      to {
+        transform: translateX(-50%) scale(1.12);
+      }
+    }
+
+    /* =========================
+       SECRET MESSAGE
+    ========================= */
+
+    .secret {
+      display: none;
+
+      animation: reveal 0.8s ease;
+
+      margin-top: 5px;
+    }
+
+    .secret.show {
+      display: block;
+    }
+
+    .secret h2 {
+      font-family: 'Itim', cursive;
+
+      color: #CD5782;
+
+      font-size: 30px;
+
+      margin-bottom: 10px;
+    }
+
+    .secret p {
+      font-family: 'Itim', cursive;
+
+      color: #6b5260;
+
+      font-size: 20px;
+
+      line-height: 1.7;
+
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+
+      background: #CD5782;
+
+      color: white;
+
+      text-decoration: none;
+
+      padding: 13px 30px;
+
+      border-radius: 999px;
+
+      font-size: 16px;
+
+      box-shadow:
+        0 8px 18px rgba(205, 87, 130, 0.3);
+
+      transition: 0.25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 480px) {
+
+      .cake-area {
+        transform: scale(0.85);
+
+        margin-top: -10px;
+        margin-bottom: -15px;
+      }
+
+      .candles {
+        gap: 14px;
+      }
+
+      .secret p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <div class="small-title">
+        Make a wish ♡
+      </div>
+
+      <h1>
+        Your Birthday Cake
+      </h1>
+
+      <div class="subtitle">
+        หลับตาแล้วอธิษฐานนะ<br>
+        จากนั้นค่อย ๆ ดับเทียนทีละเล่ม
+      </div>
+
+      <div class="instruction" id="instruction">
+        🕯️ Click the candles to blow them out 🕯️
+      </div>
+
+
+      <!-- CAKE -->
+
+      <div class="cake-area">
+
+        <!-- เทียน 5 เล่ม -->
+
+        <div class="candles">
+
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+
+        </div>
+
+
+        <!-- ตัวเค้ก -->
+
+        <div class="cake">
+
+          <div class="cake-top"></div>
+
+          <div class="cream">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- ชื่อบนเค้ก -->
+          <div class="cake-name">
+            SEOLHO <span class="cake-heart">♡</span>
+          </div>
+
+          <div class="cake-bottom"></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SECRET MESSAGE -->
+
+      <div class="secret" id="secret">
+
+        <h2>
+          Wish granted ♡
+        </h2>
+
+        <p>
+          ขอให้คำอธิษฐานของคุณเป็นจริงนะ<br>
+          และขอให้ปีนี้เป็นปีที่เต็มไปด้วย<br>
+          เรื่องดี ๆ รอยยิ้ม และความสุขมากมาย
+        </p>
+
+        <a href="letter.html" class="button">
+          There's a letter for you →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    const candles = document.querySelectorAll(".candle");
+    const secret = document.getElementById("secret");
+    const instruction = document.getElementById("instruction");
+
+    let blownCount = 0;
+
+    candles.forEach(function(candle) {
+
+      candle.addEventListener("click", function() {
+
+        if (candle.classList.contains("blown")) {
+          return;
+        }
+
+        candle.classList.add("blown");
+
+        blownCount++;
+
+        if (blownCount === candles.length) {
+
+          instruction.textContent =
+            "✨ All your candles are gone... ✨";
+
+          setTimeout(function() {
+
+            secret.classList.add("show");
+
+          }, 500);
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
