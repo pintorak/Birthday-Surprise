@@ -4,12 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Birthday Cake ♡</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<title>Birthday Cake</title>
 
 <style>
 
@@ -25,237 +20,180 @@ body {
   justify-content: center;
   align-items: center;
 
-  padding: 25px 12px;
-
-  background-color: #C7DAD8;
+  background: #C7DAD8;
 
   background-image:
-    radial-gradient(#F0EEF3 3px, transparent 3px),
     radial-gradient(#F0EEF3 3px, transparent 3px);
 
   background-size: 28px 28px;
-  background-position: 0 0, 14px 14px;
 
-  font-family: "Kanit", sans-serif;
-  color: #765865;
+  font-family: Arial, sans-serif;
 }
 
-.container {
-  width: 100%;
-  max-width: 720px;
-
-  padding: 35px 18px 45px;
-
-  background: rgba(255, 250, 252, 0.96);
-
-  border: 3px solid #CD5782;
-
-  border-radius: 30px;
-
-  box-shadow:
-    0 15px 40px rgba(90, 50, 70, 0.16);
-
-  text-align: center;
-}
-
-/* TITLE */
-
-h1 {
-  margin: 0 0 5px;
-
-  font-family: "Playfair Display", serif;
-
-  color: #B94F73;
-
-  font-size: clamp(32px, 8vw, 50px);
-}
-
-.subtitle {
-  margin: 0 0 15px;
-
-  font-family: "Itim", cursive;
-
-  color: #9B7180;
-
-  font-size: 23px;
-}
-
-/* CAKE SCENE */
+/* พื้นที่เค้ก */
 
 .cake-scene {
   position: relative;
 
-  width: 100%;
-  max-width: 600px;
+  width: 500px;
+  height: 520px;
 
-  height: 455px;
-
-  margin: 0 auto;
+  margin: auto;
 }
 
-/* CANDLES */
 
-.candles {
-  position: absolute;
-
-  z-index: 20;
-
-  top: 63px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: flex-end;
-
-  gap: 25px;
-}
-
-.candle {
-  position: relative;
-
-  width: 25px;
-  height: 78px;
-
-  background:
-    repeating-linear-gradient(
-      125deg,
-      #fff9f8 0px,
-      #fff9f8 7px,
-      #E96F91 7px,
-      #E96F91 13px
-    );
-
-  border: 2px solid #D4577A;
-
-  border-radius: 7px 7px 4px 4px;
-
-  cursor: pointer;
-
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.candle:hover {
-  transform: translateY(-5px);
-}
-
-.candle.off {
-  opacity: 0.4;
-}
-
-/* FLAME */
-
-.flame {
-  position: absolute;
-
-  width: 22px;
-  height: 33px;
-
-  top: -34px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  background:
-    radial-gradient(
-      circle at 50% 65%,
-      #FFF8B8 0%,
-      #FFD96A 45%,
-      #FFB84D 75%,
-      transparent 76%
-    );
-
-  border-radius: 50% 50% 45% 45%;
-
-  filter: drop-shadow(0 0 8px #FFD96A);
-
-  animation: flame 0.8s ease-in-out infinite alternate;
-}
-
-@keyframes flame {
-  from {
-    transform: translateX(-50%) scale(1);
-  }
-
-  to {
-    transform: translateX(-50%) scale(1.12);
-  }
-}
-
-.candle.off .flame {
-  display: none;
-}
-
-/* CAKE */
+/* =========================
+   CAKE
+========================= */
 
 .cake {
   position: absolute;
 
+  width: 360px;
+  height: 250px;
+
   left: 50%;
-  bottom: 55px;
+  bottom: 80px;
 
   transform: translateX(-50%);
-
-  width: 430px;
-  max-width: 88vw;
-
-  height: 270px;
-
-  z-index: 10;
 }
 
-/* TOP CAKE */
 
-.cake-top {
+/* ชั้นล่าง */
+
+.layer-bottom {
   position: absolute;
 
-  left: 18px;
-  top: 5px;
+  left: 0;
+  bottom: 0;
 
-  width: calc(100% - 36px);
-  height: 88px;
+  width: 360px;
+  height: 105px;
 
-  background:
-    radial-gradient(
-      ellipse at center,
-      #FFFDF9 0%,
-      #FFF9F2 60%,
-      #F4E8DA 100%
-    );
+  background: #E9B77F;
 
-  border: 4px solid #D89A8D;
+  border: 4px solid #B97958;
+
+  border-radius: 10px 10px 25px 25px;
+}
+
+
+/* ชั้นกลาง */
+
+.layer-middle {
+  position: absolute;
+
+  left: 25px;
+  bottom: 85px;
+
+  width: 310px;
+  height: 85px;
+
+  background: #F0C99B;
+
+  border: 4px solid #B97958;
+
+  border-radius: 12px;
+}
+
+
+/* ชั้นบน */
+
+.layer-top {
+  position: absolute;
+
+  left: 45px;
+  bottom: 150px;
+
+  width: 270px;
+  height: 70px;
+
+  background: #F5D8B5;
+
+  border: 4px solid #B97958;
+
+  border-radius: 50% 50% 15px 15px;
+}
+
+
+/* =========================
+   ครีมด้านบน
+========================= */
+
+.frosting {
+  position: absolute;
+
+  left: 40px;
+  bottom: 178px;
+
+  width: 280px;
+  height: 48px;
+
+  background: #FFF8EF;
+
+  border: 4px solid #D9A18F;
 
   border-radius: 50%;
 
   z-index: 5;
 }
 
-/* STRAWBERRIES */
+
+/* ครีมหยด */
+
+.drip {
+  position: absolute;
+
+  bottom: -20px;
+
+  width: 30px;
+  height: 25px;
+
+  background: #FFF8EF;
+
+  border-left: 3px solid #D9A18F;
+  border-right: 3px solid #D9A18F;
+  border-bottom: 3px solid #D9A18F;
+
+  border-radius: 0 0 15px 15px;
+}
+
+.drip:nth-child(1) {
+  left: 25px;
+}
+
+.drip:nth-child(2) {
+  left: 90px;
+  height: 35px;
+}
+
+.drip:nth-child(3) {
+  right: 90px;
+}
+
+.drip:nth-child(4) {
+  right: 25px;
+  height: 32px;
+}
+
+
+/* =========================
+   สตรอว์เบอร์รี
+========================= */
 
 .strawberry {
   position: absolute;
 
-  width: 48px;
-  height: 55px;
+  z-index: 8;
 
-  background:
-    radial-gradient(
-      circle at 30% 30%,
-      #FF9AA7 0%,
-      #E94F63 55%,
-      #C93E53 100%
-    );
+  width: 42px;
+  height: 48px;
+
+  background: #E94F5F;
 
   border-radius: 50% 50% 45% 45%;
 
-  z-index: 8;
-
-  box-shadow:
-    inset -5px -5px 8px rgba(120,30,40,0.12);
+  bottom: 190px;
 }
 
 .strawberry::before {
@@ -263,14 +201,13 @@ h1 {
 
   position: absolute;
 
-  top: 17px;
-  left: 8px;
+  top: 18px;
+  left: 7px;
 
-  color: #FFE6A8;
+  color: #FFE6A3;
 
-  font-size: 10px;
-
-  letter-spacing: 3px;
+  font-size: 9px;
+  letter-spacing: 4px;
 }
 
 .strawberry::after {
@@ -278,610 +215,250 @@ h1 {
 
   position: absolute;
 
-  top: -13px;
-  left: 12px;
+  top: -15px;
+  left: 8px;
 
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .s1 {
   left: 80px;
-  top: 18px;
-  transform: rotate(-12deg);
+  transform: rotate(-10deg);
 }
 
 .s2 {
-  left: 185px;
-  top: 8px;
-  transform: rotate(5deg);
+  left: 160px;
+  bottom: 198px;
 }
 
 .s3 {
-  right: 80px;
-  top: 18px;
-  transform: rotate(12deg);
+  right: 75px;
+  transform: rotate(10deg);
 }
 
-/* WHIPPED CREAM */
 
-.cream {
-  position: absolute;
-
-  z-index: 9;
-
-  left: 32px;
-  top: 32px;
-
-  width: calc(100% - 64px);
-
-  height: 72px;
-
-  display: flex;
-
-  justify-content: space-around;
-
-  align-items: flex-end;
-}
-
-.cream-dot {
-  width: 58px;
-  height: 48px;
-
-  background:
-    radial-gradient(
-      circle at 40% 35%,
-      #FFFFFF 0%,
-      #FFF8F0 65%,
-      #EEDFD4 100%
-    );
-
-  border-radius: 55% 55% 35% 35%;
-
-  box-shadow:
-    0 3px 5px rgba(150,100,80,0.12);
-
-  position: relative;
-}
-
-.cream-dot::after {
-  content: "";
-
-  position: absolute;
-
-  left: 7px;
-  right: 7px;
-  bottom: 7px;
-
-  height: 5px;
-
-  border-radius: 50%;
-
-  background: rgba(218,170,160,0.35);
-}
-
-/* UPPER CAKE BODY */
-
-.upper-layer {
-  position: absolute;
-
-  z-index: 3;
-
-  left: 28px;
-  top: 72px;
-
-  width: calc(100% - 56px);
-
-  height: 95px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      #F7D9B7 0%,
-      #F1CDA7 100%
-    );
-
-  border-left: 4px solid #D89A8D;
-  border-right: 4px solid #D89A8D;
-
-  border-bottom: 4px solid #D89A8D;
-}
-
-/* WHITE FROSTING BETWEEN LAYERS */
-
-.middle-cream {
-  position: absolute;
-
-  z-index: 6;
-
-  left: 28px;
-  top: 125px;
-
-  width: calc(100% - 56px);
-
-  height: 35px;
-
-  background: #FFF9F2;
-
-  border-top: 3px solid #E2B3A6;
-
-  border-bottom: 3px solid #D89A8D;
-
-  border-radius: 0 0 45% 45%;
-}
-
-/* LOWER CAKE */
-
-.lower-layer {
-  position: absolute;
-
-  z-index: 2;
-
-  left: 0;
-  top: 150px;
-
-  width: 100%;
-
-  height: 110px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      #F3C99D 0%,
-      #E9B883 100%
-    );
-
-  border: 4px solid #D89A8D;
-
-  border-radius: 0 0 28px 28px;
-}
-
-/* LOWER CREAM */
-
-.bottom-cream {
-  position: absolute;
-
-  z-index: 7;
-
-  left: 0;
-
-  bottom: 7px;
-
-  width: 100%;
-
-  height: 35px;
-
-  background: #FFF9F2;
-
-  border: 3px solid #D89A8D;
-
-  border-radius: 50%;
-}
-
-/* PINK CREAM RIBBON */
-
-.pink-ribbon {
-  position: absolute;
-
-  z-index: 8;
-
-  left: 0;
-
-  top: 108px;
-
-  width: 100%;
-
-  height: 18px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      #F3A1B3,
-      #D96C89
-    );
-
-  border-top: 3px solid #C65A76;
-  border-bottom: 3px solid #C65A76;
-
-  border-radius: 50%;
-}
-
-/* BOTTOM DECORATION */
-
-.bottom-decoration {
-  position: absolute;
-
-  z-index: 10;
-
-  left: 0;
-
-  bottom: -2px;
-
-  width: 100%;
-
-  display: flex;
-
-  justify-content: space-around;
-
-  color: #FFF9F2;
-
-  font-size: 27px;
-}
-
-/* NAME */
+/* =========================
+   ชื่อบนเค้ก
+========================= */
 
 .name {
   position: absolute;
 
-  z-index: 12;
-
-  top: 145px;
+  z-index: 10;
 
   left: 50%;
+  bottom: 62px;
 
   transform: translateX(-50%);
 
   width: 100%;
 
-  font-family: "Itim", cursive;
+  text-align: center;
 
-  font-size: clamp(28px, 6vw, 40px);
+  font-family: cursive;
 
-  font-weight: 400;
+  font-size: 32px;
 
-  color: #D65D7B;
+  font-weight: bold;
 
-  text-shadow:
-    1px 1px 0 #FFF9F2,
-    -1px -1px 0 #FFF9F2,
-    1px -1px 0 #FFF9F2,
-    -1px 1px 0 #FFF9F2;
+  color: #D65B79;
+
 }
 
-/* PLATE */
+
+/* =========================
+   เทียน
+========================= */
+
+.candles {
+  position: absolute;
+
+  z-index: 20;
+
+  top: 70px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  gap: 25px;
+
+  align-items: flex-end;
+}
+
+.candle {
+  position: relative;
+
+  width: 24px;
+  height: 72px;
+
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #FFF4F3 0px,
+      #FFF4F3 7px,
+      #E95D80 7px,
+      #E95D80 13px
+    );
+
+  border: 2px solid #C94D70;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+
+/* ไฟ */
+
+.flame {
+  position: absolute;
+
+  width: 20px;
+  height: 30px;
+
+  left: 50%;
+  top: -32px;
+
+  transform: translateX(-50%);
+
+  background: #FFD866;
+
+  border-radius: 50% 50% 45% 45%;
+
+  box-shadow:
+    0 0 12px #FFD866;
+
+  animation: flicker 0.7s infinite alternate;
+}
+
+@keyframes flicker {
+
+  from {
+    transform: translateX(-50%) scale(1);
+  }
+
+  to {
+    transform: translateX(-50%) scale(1.12);
+  }
+
+}
+
+.candle.off {
+  opacity: 0.35;
+}
+
+.candle.off .flame {
+  display: none;
+}
+
+
+/* =========================
+   จาน
+========================= */
 
 .plate {
   position: absolute;
 
-  z-index: 1;
-
   left: 50%;
-
-  bottom: 34px;
+  bottom: 55px;
 
   transform: translateX(-50%);
 
-  width: 490px;
+  width: 410px;
+  height: 28px;
 
-  max-width: 95vw;
+  background: #FFF8EF;
 
-  height: 35px;
-
-  background: #FFF9F2;
-
-  border: 4px solid #D89A8D;
+  border: 4px solid #C98D7B;
 
   border-radius: 50%;
-
-  box-shadow:
-    0 5px 12px rgba(100,70,60,0.12);
-}
-
-/* TEXT */
-
-.instruction {
-  margin: 0 0 18px;
-
-  font-family: "Itim", cursive;
-
-  font-size: 21px;
-
-  color: #9B7180;
-}
-
-/* SECRET */
-
-.secret {
-  display: none;
-
-  max-width: 540px;
-
-  margin: 0 auto;
-
-  padding: 25px 20px;
-
-  background: #FFF9F2;
-
-  border: 2px solid #CD5782;
-
-  border-radius: 25px;
-
-  animation: appear 0.7s ease;
-}
-
-.secret.show {
-  display: block;
-}
-
-@keyframes appear {
-
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
-.secret h2 {
-  margin: 0 0 10px;
-
-  font-family: "Playfair Display", serif;
-
-  color: #CD5782;
-
-  font-size: 31px;
-}
-
-.secret p {
-  margin: 0 0 20px;
-
-  font-family: "Itim", cursive;
-
-  font-size: 20px;
-
-  line-height: 1.8;
-}
-
-.next-btn {
-  display: inline-block;
-
-  padding: 12px 25px;
-
-  background: #CD5782;
-
-  color: white;
-
-  text-decoration: none;
-
-  border-radius: 999px;
-
-  font-family: "Itim", cursive;
-
-  font-size: 18px;
-
-  box-shadow: 0 5px 0 #A94467;
-
-  transition: 0.2s;
-}
-
-.next-btn:hover {
-  transform: translateY(-2px);
-}
-
-.next-btn:active {
-  transform: translateY(3px);
-
-  box-shadow: 0 2px 0 #A94467;
-}
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-  .container {
-    padding: 28px 8px 35px;
-  }
-
-  .cake-scene {
-    height: 390px;
-  }
-
-  .cake {
-    width: 350px;
-    height: 230px;
-
-    bottom: 50px;
-  }
-
-  .candles {
-    top: 55px;
-
-    gap: 13px;
-  }
-
-  .candle {
-    width: 22px;
-    height: 70px;
-  }
-
-  .strawberry {
-    width: 40px;
-    height: 46px;
-  }
-
-  .s1 {
-    left: 55px;
-  }
-
-  .s2 {
-    left: 155px;
-  }
-
-  .s3 {
-    right: 55px;
-  }
-
-  .cream-dot {
-    width: 45px;
-    height: 40px;
-  }
-
-  .name {
-    top: 142px;
-  }
-
-  .plate {
-    width: 370px;
-  }
-
 }
 
 </style>
 </head>
 
+
 <body>
-
-<div class="container">
-
-<h1>Your Birthday Cake ♡</h1>
-
-<p class="subtitle">
-Make a wish, Seolho ♡
-</p>
-
 
 <div class="cake-scene">
 
-<!-- CANDLES -->
+  <!-- เทียน -->
 
-<div class="candles">
+  <div class="candles">
 
-  <div class="candle" onclick="blowCandle(this)">
-    <div class="flame"></div>
-  </div>
+    <div class="candle" onclick="blow(this)">
+      <div class="flame"></div>
+    </div>
 
-  <div class="candle" onclick="blowCandle(this)">
-    <div class="flame"></div>
-  </div>
+    <div class="candle" onclick="blow(this)">
+      <div class="flame"></div>
+    </div>
 
-  <div class="candle" onclick="blowCandle(this)">
-    <div class="flame"></div>
-  </div>
+    <div class="candle" onclick="blow(this)">
+      <div class="flame"></div>
+    </div>
 
-  <div class="candle" onclick="blowCandle(this)">
-    <div class="flame"></div>
-  </div>
+    <div class="candle" onclick="blow(this)">
+      <div class="flame"></div>
+    </div>
 
-  <div class="candle" onclick="blowCandle(this)">
-    <div class="flame"></div>
-  </div>
-
-</div>
-
-
-<!-- CAKE -->
-
-<div class="cake">
-
-  <div class="cake-top"></div>
-
-  <div class="strawberry s1"></div>
-  <div class="strawberry s2"></div>
-  <div class="strawberry s3"></div>
-
-  <div class="cream">
-
-    <div class="cream-dot"></div>
-    <div class="cream-dot"></div>
-    <div class="cream-dot"></div>
-    <div class="cream-dot"></div>
-    <div class="cream-dot"></div>
-    <div class="cream-dot"></div>
+    <div class="candle" onclick="blow(this)">
+      <div class="flame"></div>
+    </div>
 
   </div>
 
-  <div class="upper-layer"></div>
 
-  <div class="pink-ribbon"></div>
+  <!-- เค้ก -->
 
-  <div class="middle-cream"></div>
+  <div class="cake">
 
-  <div class="lower-layer"></div>
+    <div class="layer-bottom"></div>
 
-  <div class="bottom-cream"></div>
+    <div class="layer-middle"></div>
 
-  <div class="name">
-    SEOLHO ♡
+    <div class="layer-top"></div>
+
+    <div class="frosting">
+
+      <div class="drip"></div>
+      <div class="drip"></div>
+      <div class="drip"></div>
+      <div class="drip"></div>
+
+    </div>
+
+
+    <!-- สตรอว์เบอร์รี -->
+
+    <div class="strawberry s1"></div>
+    <div class="strawberry s2"></div>
+    <div class="strawberry s3"></div>
+
+
+    <!-- ชื่อ -->
+
+    <div class="name">
+      SEOLHO ♡
+    </div>
+
   </div>
 
-  <div class="bottom-decoration">
-    ♡　♡　♡　♡　♡
-  </div>
 
-</div>
+  <!-- จาน -->
 
-
-<!-- PLATE -->
-
-<div class="plate"></div>
-
-</div>
-
-
-<p class="instruction" id="instruction">
-Click each candle to blow it out ♡
-</p>
-
-
-<!-- SECRET -->
-
-<div class="secret" id="secret">
-
-<h2>
-Wish granted ♡
-</h2>
-
-<p>
-ขอให้คำอธิษฐานของเธอเป็นจริง<br>
-ขอให้ปีนี้มีแต่เรื่องดี ๆ เข้ามา<br>
-และขอให้มีความสุขมาก ๆ ในทุกวันนะ ♡
-</p>
-
-<a href="letter.html" class="next-btn">
-There's a letter for you →
-</a>
-
-</div>
-
+  <div class="plate"></div>
 
 </div>
 
 
 <script>
 
-let candlesLeft = 5;
-
-function blowCandle(candle) {
-
-  if (candle.classList.contains("off")) {
-    return;
-  }
-
-  candle.classList.add("off");
-
-  candlesLeft--;
-
-  if (candlesLeft === 0) {
-
-    document.getElementById("instruction").textContent =
-      "✨ All your candles are gone... ✨";
-
-    document.getElementById("secret").classList.add("show");
-
-  } else {
-
-    document.getElementById("instruction").textContent =
-      candlesLeft +
-      " candle" +
-      (candlesLeft > 1 ? "s" : "") +
-      " left... make a wish ♡";
-
-  }
-
+function blow(candle) {
+  candle.classList.toggle("off");
 }
 
 </script>
