@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Our Memories ♡</title>
+  <title>Little Moments ♡</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,139 +36,156 @@
 
     .container {
       width: 100%;
-      max-width: 900px;
+      max-width: 850px;
       margin: auto;
     }
+
+    /* หัวข้อ */
 
     .header {
       text-align: center;
 
-      background: rgba(240, 238, 243, 0.95);
+      background: rgba(240, 238, 243, 0.96);
 
       border: 3px solid #CD5782;
       border-radius: 30px;
 
       padding: 30px 20px;
 
-      margin-bottom: 35px;
+      margin-bottom: 30px;
 
       box-shadow:
         0 12px 30px rgba(91, 64, 80, 0.15);
     }
 
-    .small-title {
+    .tiny {
       font-family: 'Itim', cursive;
+      font-size: 22px;
       color: #CD5782;
-      font-size: 23px;
+
       margin-bottom: 5px;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
       color: #CD5782;
+
       font-size: clamp(38px, 9vw, 60px);
+
       margin-bottom: 8px;
     }
 
     .subtitle {
       font-family: 'Itim', cursive;
+
       font-size: 20px;
+
       color: #6b5260;
+
+      line-height: 1.6;
     }
 
-    .photos {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+    /* รูปภาพ */
 
-      margin-bottom: 35px;
+    .photo-list {
+      display: flex;
+      flex-direction: column;
+
+      gap: 28px;
+
+      margin-bottom: 30px;
     }
 
-    .polaroid {
-      background: #F0EEF3;
+    .memory {
+      display: flex;
+      align-items: center;
+      gap: 22px;
 
-      padding: 12px 12px 25px;
+      background: rgba(240, 238, 243, 0.96);
 
-      border-radius: 5px;
+      border-radius: 25px;
+
+      padding: 14px;
 
       box-shadow:
-        0 10px 20px rgba(91, 64, 80, 0.18);
+        0 10px 25px rgba(91, 64, 80, 0.15);
 
-      transform: rotate(-2deg);
+      border: 2px solid rgba(205, 87, 130, 0.5);
 
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+      transition: 0.3s ease;
     }
 
-    .polaroid:nth-child(2) {
-      transform: rotate(2deg);
+    .memory:hover {
+      transform: translateY(-5px);
     }
 
-    .polaroid:nth-child(3) {
-      transform: rotate(1deg);
-    }
-
-    .polaroid:nth-child(4) {
-      transform: rotate(-2deg);
-    }
-
-    .polaroid:nth-child(5) {
-      transform: rotate(2deg);
-    }
-
-    .polaroid:hover {
-      transform: rotate(0deg) translateY(-8px);
-      box-shadow:
-        0 18px 30px rgba(91, 64, 80, 0.25);
+    .memory:nth-child(even) {
+      flex-direction: row-reverse;
     }
 
     .photo {
-      width: 100%;
+      width: 45%;
       aspect-ratio: 4 / 3;
 
       object-fit: cover;
 
-      display: block;
-
-      border-radius: 2px;
+      border-radius: 18px;
 
       background: #DCD3AA;
+
+      display: block;
     }
 
-    .caption {
+    .text {
+      flex: 1;
+
       text-align: center;
 
+      padding: 10px;
+    }
+
+    .number {
+      font-family: 'Playfair Display', serif;
+
+      color: #CD5782;
+
+      font-size: 25px;
+
+      margin-bottom: 5px;
+    }
+
+    .text h2 {
       font-family: 'Itim', cursive;
 
       color: #CD5782;
 
-      font-size: 20px;
+      font-size: 27px;
 
-      margin-top: 12px;
+      margin-bottom: 8px;
     }
 
-    .date {
-      text-align: center;
+    .text p {
+      font-family: 'Itim', cursive;
 
-      font-family: 'Kanit', sans-serif;
+      color: #6b5260;
 
-      font-size: 13px;
+      font-size: 18px;
 
-      color: #8b6b7a;
-
-      margin-top: 3px;
+      line-height: 1.6;
     }
+
+    /* กล่องท้าย */
 
     .bottom {
       text-align: center;
 
-      background: rgba(240, 238, 243, 0.95);
+      background: rgba(240, 238, 243, 0.96);
 
       border: 3px solid #CD5782;
+
       border-radius: 30px;
 
-      padding: 25px 20px;
+      padding: 28px 20px;
 
       box-shadow:
         0 12px 30px rgba(91, 64, 80, 0.15);
@@ -177,9 +194,9 @@
     .bottom p {
       font-family: 'Itim', cursive;
 
-      font-size: 20px;
-
       color: #6b5260;
+
+      font-size: 21px;
 
       margin-bottom: 18px;
     }
@@ -209,19 +226,33 @@
       transform: translateY(-3px);
     }
 
+    /* มือถือ */
+
     @media (max-width: 650px) {
 
-      .photos {
-        grid-template-columns: 1fr;
-        gap: 25px;
+      body {
+        padding: 25px 13px 40px;
       }
 
-      .header {
-        padding: 25px 18px;
+      .memory,
+      .memory:nth-child(even) {
+        flex-direction: column;
       }
 
-      .caption {
-        font-size: 19px;
+      .photo {
+        width: 100%;
+      }
+
+      .text {
+        padding: 8px 10px 15px;
+      }
+
+      .text h2 {
+        font-size: 25px;
+      }
+
+      .text p {
+        font-size: 18px;
       }
     }
   </style>
@@ -231,135 +262,190 @@
 
   <div class="container">
 
+    <!-- HEADER -->
+
     <div class="header">
 
-      <div class="small-title">
-        A collection of little moments ♡
+      <div class="tiny">
+        A few little moments ♡
       </div>
 
       <h1>
-        Our Memories
+        Little Moments
       </h1>
 
       <div class="subtitle">
-        ทุกช่วงเวลาที่มีคุณ ล้วนเป็นความทรงจำที่ฉันรัก
+        รูปเล็ก ๆ ของคนพิเศษ<br>
+        ที่ทำให้วันธรรมดากลายเป็นวันที่น่าจดจำ
       </div>
 
     </div>
 
 
-    <div class="photos">
+    <!-- PHOTO 1 -->
 
-      <!-- รูปที่ 1 -->
-      <div class="polaroid">
+    <div class="photo-list">
+
+      <div class="memory">
 
         <img
           src="photo1.jpg"
-          alt="Our memory 1"
+          alt="Little moment 1"
           class="photo"
         >
 
-        <div class="caption">
-          The Day I Started Falling for You ♡
-        </div>
+        <div class="text">
 
-        <div class="date">
-          Our little beginning
+          <div class="number">
+            01
+          </div>
+
+          <h2>
+            The Beginning ♡
+          </h2>
+
+          <p>
+            ทุกอย่างอาจเริ่มจากช่วงเวลาเล็ก ๆ
+            แต่สำหรับฉัน มันมีความหมายมากกว่าที่คิด
+          </p>
+
         </div>
 
       </div>
 
 
-      <!-- รูปที่ 2 -->
-      <div class="polaroid">
+      <!-- PHOTO 2 -->
+
+      <div class="memory">
 
         <img
           src="photo2.jpg"
-          alt="Our memory 2"
+          alt="Little moment 2"
           class="photo"
         >
 
-        <div class="caption">
-          One of My Favorite Days
-        </div>
+        <div class="text">
 
-        <div class="date">
-          A moment worth remembering
+          <div class="number">
+            02
+          </div>
+
+          <h2>
+            A Happy Day
+          </h2>
+
+          <p>
+            แค่ได้มีคุณอยู่ในวันนั้น
+            วันธรรมดาก็กลายเป็นวันที่ฉันอยากจำ
+          </p>
+
         </div>
 
       </div>
 
 
-      <!-- รูปที่ 3 -->
-      <div class="polaroid">
+      <!-- PHOTO 3 -->
+
+      <div class="memory">
 
         <img
           src="photo3.jpg"
-          alt="Our memory 3"
+          alt="Little moment 3"
           class="photo"
         >
 
-        <div class="caption">
-          Just You & Me
-        </div>
+        <div class="text">
 
-        <div class="date">
-          My favorite place is with you
+          <div class="number">
+            03
+          </div>
+
+          <h2>
+            Just Us ♡
+          </h2>
+
+          <p>
+            ไม่ต้องมีอะไรพิเศษเลย
+            แค่เป็นช่วงเวลาที่มีเราสองคนก็พอ
+          </p>
+
         </div>
 
       </div>
 
 
-      <!-- รูปที่ 4 -->
-      <div class="polaroid">
+      <!-- PHOTO 4 -->
+
+      <div class="memory">
 
         <img
           src="photo4.jpg"
-          alt="Our memory 4"
+          alt="Little moment 4"
           class="photo"
         >
 
-        <div class="caption">
-          Another Little Memory ♡
-        </div>
+        <div class="text">
 
-        <div class="date">
-          I hope we make many more
+          <div class="number">
+            04
+          </div>
+
+          <h2>
+            One More Smile
+          </h2>
+
+          <p>
+            รอยยิ้มของคุณยังเป็นหนึ่งในสิ่งที่
+            ฉันชอบที่สุดเสมอ
+          </p>
+
         </div>
 
       </div>
 
 
-      <!-- รูปที่ 5 -->
-      <div class="polaroid">
+      <!-- PHOTO 5 -->
+
+      <div class="memory">
 
         <img
           src="photo5.jpg"
-          alt="Our memory 5"
+          alt="Little moment 5"
           class="photo"
         >
 
-        <div class="caption">
-          My Favorite Person
-        </div>
+        <div class="text">
 
-        <div class="date">
-          Always you ♡
+          <div class="number">
+            05
+          </div>
+
+          <h2>
+            My Favorite ♡
+          </h2>
+
+          <p>
+            และไม่ว่าภาพไหนจะผ่านไป
+            คุณก็ยังเป็นคนโปรดของฉันอยู่ดี
+          </p>
+
         </div>
 
       </div>
 
     </div>
 
+
+    <!-- BOTTOM -->
 
     <div class="bottom">
 
       <p>
-        และนี่เป็นเพียงบางส่วนของเรื่องราวของเรา...
+        พร้อมไปดูเซอร์ไพรส์ต่อหรือยัง? 🎂
       </p>
 
       <a href="cake.html" class="button">
-        There's More → 
+        Let's Celebrate →
       </a>
 
     </div>
