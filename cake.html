@@ -47,41 +47,26 @@
       text-align: center;
     }
 
-    /* TITLE */
-
     h1 {
       font-family: "Playfair Display", serif;
-
       color: #cd5782;
-
       font-size: 42px;
-
       margin: 0 0 8px;
     }
 
     .subtitle {
       font-family: "Itim", cursive;
-
       color: #7b6268;
-
       font-size: 24px;
-
       margin-bottom: 5px;
     }
 
-    /* INSTRUCTION */
-
     .instruction {
       font-family: "Itim", cursive;
-
       font-size: 20px;
-
       line-height: 1.7;
-
       color: #6d5960;
-
       margin: 5px auto 0;
-
       max-width: 500px;
     }
 
@@ -93,16 +78,13 @@
 
     .cake-scene {
       position: relative;
-
       width: 100%;
       max-width: 470px;
-
       height: 360px;
-
       margin: 0 auto;
     }
 
-    /* CANDLES */
+    /* CANDLES — กลับเป็นตำแหน่งเดิม */
 
     .candle {
       position: absolute;
@@ -134,11 +116,6 @@
         opacity 0.35s ease,
         transform 0.25s ease;
     }
-
-    /*
-      เทียนถูกยกขึ้นมาอีก
-      ให้ฐานเทียนอยู่ใกล้กับสตรอว์เบอร์รี
-    */
 
     .candle.c1 {
       left: 23%;
@@ -234,9 +211,7 @@
 
     .candle.off {
       opacity: 0.35;
-
       transform: translateY(5px);
-
       cursor: default;
     }
 
@@ -260,8 +235,6 @@
       z-index: 5;
     }
 
-    /* TOP */
-
     .cake-top {
       width: 240px;
       height: 85px;
@@ -282,8 +255,6 @@
         0 5px 0 #e9c8aa;
     }
 
-    /* MIDDLE */
-
     .cake-middle {
       width: 270px;
       height: 70px;
@@ -303,8 +274,6 @@
       box-shadow:
         0 7px 0 #dfb69a;
     }
-
-    /* BOTTOM */
 
     .cake-bottom {
       width: 310px;
@@ -372,39 +341,13 @@
       right: 65px;
     }
 
-    /* NAME */
-
-    .name {
-      position: absolute;
-
-      bottom: 32px;
-
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      font-family: "Itim", cursive;
-
-      color: #cd5782;
-
-      font-size: 29px;
-
-      z-index: 15;
-
-      white-space: nowrap;
-    }
-
     /* COUNT */
 
     .count {
       font-family: "Itim", cursive;
-
       font-size: 20px;
-
       color: #cd5782;
-
       margin-top: 0;
-
       min-height: 30px;
     }
 
@@ -439,35 +382,24 @@
 
     .wish.show {
       opacity: 1;
-
       transform: translateY(0);
-
       pointer-events: auto;
     }
 
     .wish h2 {
       font-family: "Itim", cursive;
-
       color: #cd5782;
-
       font-size: 30px;
-
       margin: 0 0 10px;
     }
 
     .wish p {
       font-family: "Itim", cursive;
-
       font-size: 19px;
-
       line-height: 1.8;
-
       margin: 0;
-
       color: #65555a;
     }
-
-    /* NEXT BUTTON */
 
     .next-btn {
       display: inline-block;
@@ -496,7 +428,6 @@
 
     .next-btn:hover {
       transform: translateY(-2px);
-
       background: #b94770;
     }
 
@@ -546,6 +477,8 @@
         width: 215px;
       }
 
+      /* ตำแหน่งเทียนเดิม */
+
       .candle.c1 {
         left: 20%;
         top: 120px;
@@ -590,9 +523,8 @@
   </h1>
 
   <div class="subtitle">
-    Make a wish, Seolho ♡
+    Make a wish ♡
   </div>
-
 
   <!-- ก่อนดับเทียน -->
 
@@ -648,17 +580,9 @@
 
       </div>
 
-
       <div class="cake-middle"></div>
 
-
-      <div class="cake-bottom">
-
-        <div class="name">
-          SEOLHO ♡
-        </div>
-
-      </div>
+      <div class="cake-bottom"></div>
 
     </div>
 
@@ -721,9 +645,7 @@
       return;
     }
 
-
     candles[index] = true;
-
 
     const candle =
       document.querySelector(".c" + number);
@@ -749,10 +671,7 @@
 
     else {
 
-      /*
-        ดับครบแล้ว
-        เอาข้อความ "หลับตา..." ออกทันที
-      */
+      /* ดับครบแล้วเอาคำสั่งก่อนดับออก */
 
       document.getElementById("instruction")
         .style.display = "none";
@@ -765,11 +684,6 @@
       document.getElementById("wish")
         .classList.add("show");
 
-
-      /*
-        เลื่อนไปที่คำอวยพรอย่างนุ่ม ๆ
-        ไม่มีข้อความหลับตาขึ้นมาอีก
-      */
 
       setTimeout(() => {
 
