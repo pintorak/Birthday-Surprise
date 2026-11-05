@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Birthday Cake</title>
+<title>Birthday Cake ♡</title>
 
 <style>
 
@@ -20,6 +20,8 @@ body {
   justify-content: center;
   align-items: center;
 
+  padding: 20px;
+
   background: #C7DAD8;
 
   background-image:
@@ -28,17 +30,83 @@ body {
   background-size: 28px 28px;
 
   font-family: Arial, sans-serif;
+
+  color: #765865;
 }
 
-/* พื้นที่เค้ก */
+.container {
+  width: 100%;
+  max-width: 650px;
+
+  padding: 35px 15px 40px;
+
+  background: rgba(255, 250, 252, 0.96);
+
+  border: 3px solid #CD5782;
+
+  border-radius: 30px;
+
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(90, 50, 70, 0.15);
+}
+
+
+/* TITLE */
+
+h1 {
+  margin: 0 0 8px;
+
+  color: #B94F73;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(30px, 8vw, 46px);
+}
+
+.subtitle {
+  margin: 0 0 8px;
+
+  font-family: cursive;
+
+  font-size: 21px;
+
+  color: #9B7180;
+}
+
+
+/* INSTRUCTION */
+
+.instruction {
+  margin: 0 auto 10px;
+
+  max-width: 430px;
+
+  font-family: cursive;
+
+  font-size: 19px;
+
+  line-height: 1.6;
+
+  color: #765865;
+}
+
+.instruction strong {
+  color: #CD5782;
+}
+
+
+/* CAKE SCENE */
 
 .cake-scene {
   position: relative;
 
-  width: 500px;
-  height: 520px;
+  width: 100%;
+  max-width: 500px;
 
-  margin: auto;
+  height: 480px;
+
+  margin: 0 auto;
 }
 
 
@@ -53,7 +121,7 @@ body {
   height: 250px;
 
   left: 50%;
-  bottom: 80px;
+  bottom: 65px;
 
   transform: translateX(-50%);
 }
@@ -117,7 +185,7 @@ body {
 
 
 /* =========================
-   ครีมด้านบน
+   ครีม
 ========================= */
 
 .frosting {
@@ -207,6 +275,7 @@ body {
   color: #FFE6A3;
 
   font-size: 9px;
+
   letter-spacing: 4px;
 }
 
@@ -223,22 +292,25 @@ body {
 
 .s1 {
   left: 80px;
+
   transform: rotate(-10deg);
 }
 
 .s2 {
   left: 160px;
+
   bottom: 198px;
 }
 
 .s3 {
   right: 75px;
+
   transform: rotate(10deg);
 }
 
 
 /* =========================
-   ชื่อบนเค้ก
+   NAME
 ========================= */
 
 .name {
@@ -262,7 +334,6 @@ body {
   font-weight: bold;
 
   color: #D65B79;
-
 }
 
 
@@ -275,7 +346,12 @@ body {
 
   z-index: 20;
 
-  top: 70px;
+  /*
+    เอาเทียนลงมาให้อยู่
+    พอดีกับระดับสตรอว์เบอร์รี
+  */
+
+  top: 230px;
 
   left: 50%;
 
@@ -286,6 +362,8 @@ body {
   gap: 25px;
 
   align-items: flex-end;
+
+  justify-content: center;
 }
 
 .candle {
@@ -308,10 +386,16 @@ body {
   border-radius: 6px;
 
   cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.candle:hover {
+  transform: translateY(-4px);
 }
 
 
-/* ไฟ */
+/* เปลวไฟ */
 
 .flame {
   position: absolute;
@@ -363,7 +447,7 @@ body {
   position: absolute;
 
   left: 50%;
-  bottom: 55px;
+  bottom: 40px;
 
   transform: translateX(-50%);
 
@@ -377,88 +461,299 @@ body {
   border-radius: 50%;
 }
 
+
+/* =========================
+   AFTER BLOWING
+========================= */
+
+.wish {
+  display: none;
+
+  margin: 10px auto 0;
+
+  max-width: 500px;
+
+  padding: 25px 20px;
+
+  background: #FFF8EF;
+
+  border: 2px solid #CD5782;
+
+  border-radius: 25px;
+
+  animation: showWish 0.8s ease;
+}
+
+.wish.show {
+  display: block;
+}
+
+.wish h2 {
+  margin: 0 0 10px;
+
+  color: #CD5782;
+
+  font-family: Georgia, serif;
+
+  font-size: 30px;
+}
+
+.wish p {
+  margin: 0;
+
+  font-family: cursive;
+
+  font-size: 20px;
+
+  line-height: 1.8;
+
+  color: #765865;
+}
+
+@keyframes showWish {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .container {
+    padding: 28px 8px 35px;
+  }
+
+  .cake-scene {
+    height: 430px;
+  }
+
+  .cake {
+    width: 320px;
+  }
+
+  .layer-bottom {
+    width: 320px;
+  }
+
+  .layer-middle {
+    width: 270px;
+  }
+
+  .layer-top {
+    width: 230px;
+  }
+
+  .frosting {
+    width: 240px;
+    left: 40px;
+  }
+
+  .candles {
+    gap: 13px;
+
+    top: 230px;
+  }
+
+  .candle {
+    width: 21px;
+    height: 65px;
+  }
+
+  .strawberry.s1 {
+    left: 60px;
+  }
+
+  .strawberry.s2 {
+    left: 140px;
+  }
+
+  .strawberry.s3 {
+    right: 60px;
+  }
+
+  .plate {
+    width: 350px;
+  }
+
+}
+
 </style>
 </head>
 
 
 <body>
 
+<div class="container">
+
+<h1>
+Your Birthday Cake ♡
+</h1>
+
+<p class="subtitle">
+Make a wish, Seolho ♡
+</p>
+
+
+<p class="instruction" id="instruction">
+
+หลับตาสักครู่ 🤍<br>
+
+<strong>อธิษฐานในสิ่งที่เธออยากให้เป็นจริง</strong><br>
+
+แล้วค่อย ๆ กดเทียนทีละเล่มเพื่อดับมัน ♡
+
+</p>
+
+
 <div class="cake-scene">
 
-  <!-- เทียน -->
 
-  <div class="candles">
+<!-- เทียน -->
 
-    <div class="candle" onclick="blow(this)">
-      <div class="flame"></div>
-    </div>
+<div class="candles">
 
-    <div class="candle" onclick="blow(this)">
-      <div class="flame"></div>
-    </div>
+  <div class="candle" onclick="blowCandle(this)">
+    <div class="flame"></div>
+  </div>
 
-    <div class="candle" onclick="blow(this)">
-      <div class="flame"></div>
-    </div>
+  <div class="candle" onclick="blowCandle(this)">
+    <div class="flame"></div>
+  </div>
 
-    <div class="candle" onclick="blow(this)">
-      <div class="flame"></div>
-    </div>
+  <div class="candle" onclick="blowCandle(this)">
+    <div class="flame"></div>
+  </div>
 
-    <div class="candle" onclick="blow(this)">
-      <div class="flame"></div>
-    </div>
+  <div class="candle" onclick="blowCandle(this)">
+    <div class="flame"></div>
+  </div>
+
+  <div class="candle" onclick="blowCandle(this)">
+    <div class="flame"></div>
+  </div>
+
+</div>
+
+
+<!-- เค้ก -->
+
+<div class="cake">
+
+  <div class="layer-bottom"></div>
+
+  <div class="layer-middle"></div>
+
+  <div class="layer-top"></div>
+
+  <div class="frosting">
+
+    <div class="drip"></div>
+    <div class="drip"></div>
+    <div class="drip"></div>
+    <div class="drip"></div>
 
   </div>
 
 
-  <!-- เค้ก -->
+  <!-- สตรอว์เบอร์รี -->
 
-  <div class="cake">
+  <div class="strawberry s1"></div>
 
-    <div class="layer-bottom"></div>
+  <div class="strawberry s2"></div>
 
-    <div class="layer-middle"></div>
-
-    <div class="layer-top"></div>
-
-    <div class="frosting">
-
-      <div class="drip"></div>
-      <div class="drip"></div>
-      <div class="drip"></div>
-      <div class="drip"></div>
-
-    </div>
+  <div class="strawberry s3"></div>
 
 
-    <!-- สตรอว์เบอร์รี -->
+  <!-- ชื่อ -->
 
-    <div class="strawberry s1"></div>
-    <div class="strawberry s2"></div>
-    <div class="strawberry s3"></div>
-
-
-    <!-- ชื่อ -->
-
-    <div class="name">
-      SEOLHO ♡
-    </div>
-
+  <div class="name">
+    SEOLHO ♡
   </div>
 
+</div>
 
-  <!-- จาน -->
 
-  <div class="plate"></div>
+<!-- จาน -->
+
+<div class="plate"></div>
+
+
+</div>
+
+
+<!-- ข้อความก่อนดับเทียน -->
+
+<p class="instruction" id="countText">
+5 candles are waiting for your wish ♡
+</p>
+
+
+<!-- ข้อความหลังดับครบ -->
+
+<div class="wish" id="wish">
+
+<h2>
+Wish granted ♡
+</h2>
+
+<p>
+ขอให้สิ่งที่เธออธิษฐานไว้<br>
+ค่อย ๆ กลายเป็นจริงทีละอย่างนะ ♡<br>
+<br>
+ขอให้ปีนี้เป็นปีที่ดีมาก ๆ<br>
+และขอให้เธอมีความสุขในทุกวัน
+</p>
+
+</div>
+
 
 </div>
 
 
 <script>
 
-function blow(candle) {
-  candle.classList.toggle("off");
+let candlesLeft = 5;
+
+function blowCandle(candle) {
+
+  if (candle.classList.contains("off")) {
+    return;
+  }
+
+  candle.classList.add("off");
+
+  candlesLeft--;
+
+  if (candlesLeft === 0) {
+
+    document.getElementById("countText").textContent =
+      "✨ You made your wish ✨";
+
+    document.getElementById("instruction").innerHTML =
+      "หลับตาไว้สักครู่นะ... ♡";
+
+    document.getElementById("wish").classList.add("show");
+
+  } else {
+
+    document.getElementById("countText").textContent =
+      candlesLeft +
+      " candles left... keep making your wish ♡";
+
+  }
+
 }
 
 </script>
