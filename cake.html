@@ -44,7 +44,6 @@
     .page {
       width: 100%;
       max-width: 700px;
-
       text-align: center;
     }
 
@@ -67,7 +66,7 @@
 
       font-size: 24px;
 
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
 
     /* INSTRUCTION */
@@ -81,7 +80,7 @@
 
       color: #6d5960;
 
-      margin: 5px auto 8px;
+      margin: 5px auto 0;
 
       max-width: 500px;
     }
@@ -98,9 +97,9 @@
       width: 100%;
       max-width: 470px;
 
-      height: 370px;
+      height: 360px;
 
-      margin: 5px auto 0;
+      margin: 0 auto;
     }
 
     /* CANDLES */
@@ -136,32 +135,37 @@
         transform 0.25s ease;
     }
 
-    /* ยกเทียนขึ้นมาให้อยู่ระดับเดียวกับสตรอว์เบอร์รี */
+    /*
+      เทียนถูกยกขึ้นมาอีก
+      ให้ฐานเทียนอยู่ใกล้กับสตรอว์เบอร์รี
+    */
 
     .candle.c1 {
       left: 23%;
-      top: 185px;
+      top: 125px;
     }
 
     .candle.c2 {
       left: 35%;
-      top: 185px;
+      top: 125px;
     }
 
     .candle.c3 {
       left: 47%;
-      top: 178px;
+      top: 118px;
     }
 
     .candle.c4 {
       left: 59%;
-      top: 185px;
+      top: 125px;
     }
 
     .candle.c5 {
       left: 71%;
-      top: 185px;
+      top: 125px;
     }
+
+    /* WICK */
 
     .candle::before {
       content: "";
@@ -193,7 +197,7 @@
 
       background: #ffd86b;
 
-      border-radius: 50% 50% 50% 50%;
+      border-radius: 50%;
 
       top: -35px;
       left: 50%;
@@ -209,6 +213,7 @@
     }
 
     @keyframes flame {
+
       from {
         transform:
           translateX(-50%)
@@ -222,14 +227,17 @@
           rotate(48deg)
           scale(1.05);
       }
+
     }
 
     /* EXTINGUISHED */
 
     .candle.off {
-      opacity: 0.45;
+      opacity: 0.35;
 
       transform: translateY(5px);
+
+      cursor: default;
     }
 
     .candle.off::after {
@@ -395,7 +403,7 @@
 
       color: #cd5782;
 
-      margin-top: 2px;
+      margin-top: 0;
 
       min-height: 30px;
     }
@@ -459,7 +467,7 @@
       color: #65555a;
     }
 
-    /* BUTTON */
+    /* NEXT BUTTON */
 
     .next-btn {
       display: inline-block;
@@ -513,8 +521,10 @@
       }
 
       .cake-scene {
-        height: 345px;
+        height: 335px;
+
         transform: scale(0.9);
+
         transform-origin: top center;
 
         margin-bottom: -30px;
@@ -538,22 +548,27 @@
 
       .candle.c1 {
         left: 20%;
+        top: 120px;
       }
 
       .candle.c2 {
         left: 33%;
+        top: 120px;
       }
 
       .candle.c3 {
         left: 46%;
+        top: 113px;
       }
 
       .candle.c4 {
         left: 59%;
+        top: 120px;
       }
 
       .candle.c5 {
         left: 72%;
+        top: 120px;
       }
 
       .wish {
@@ -568,157 +583,209 @@
 
 <body>
 
-  <div class="page">
+<div class="page">
 
-    <h1>Your Birthday Cake ♡</h1>
+  <h1>
+    Your Birthday Cake ♡
+  </h1>
 
-    <div class="subtitle">
-      Make a wish, Seolho ♡
+  <div class="subtitle">
+    Make a wish, Seolho ♡
+  </div>
+
+
+  <!-- ก่อนดับเทียน -->
+
+  <div class="instruction" id="instruction">
+
+    หลับตาสักครู่ 🤍<br>
+
+    อธิษฐานในสิ่งที่เธออยากให้เป็นจริง<br>
+
+    <span>
+      แล้วค่อย ๆ กดเทียนทีละเล่มเพื่อดับมัน ♡
+    </span>
+
+  </div>
+
+
+  <div class="cake-scene">
+
+    <!-- CANDLES -->
+
+    <div class="candle c1"
+         onclick="blowCandle(1)">
     </div>
 
-    <div class="instruction">
-      หลับตาสักครู่ 🤍<br>
+    <div class="candle c2"
+         onclick="blowCandle(2)">
+    </div>
 
-      อธิษฐานในสิ่งที่เธออยากให้เป็นจริง<br>
+    <div class="candle c3"
+         onclick="blowCandle(3)">
+    </div>
 
-      <span>แล้วค่อย ๆ กดเทียนทีละเล่มเพื่อดับมัน ♡</span>
+    <div class="candle c4"
+         onclick="blowCandle(4)">
+    </div>
+
+    <div class="candle c5"
+         onclick="blowCandle(5)">
     </div>
 
 
-    <div class="cake-scene">
+    <!-- CAKE -->
 
-      <!-- CANDLES -->
+    <div class="cake">
 
-      <div class="candle c1"
-           onclick="blowCandle(1)"></div>
+      <div class="cake-top">
 
-      <div class="candle c2"
-           onclick="blowCandle(2)"></div>
+        <div class="strawberry s1"></div>
 
-      <div class="candle c3"
-           onclick="blowCandle(3)"></div>
+        <div class="strawberry s2"></div>
 
-      <div class="candle c4"
-           onclick="blowCandle(4)"></div>
+        <div class="strawberry s3"></div>
 
-      <div class="candle c5"
-           onclick="blowCandle(5)"></div>
+      </div>
 
 
-      <!-- CAKE -->
+      <div class="cake-middle"></div>
 
-      <div class="cake">
 
-        <div class="cake-top">
+      <div class="cake-bottom">
 
-          <div class="strawberry s1"></div>
-          <div class="strawberry s2"></div>
-          <div class="strawberry s3"></div>
-
-        </div>
-
-        <div class="cake-middle"></div>
-
-        <div class="cake-bottom">
-
-          <div class="name">
-            SEOLHO ♡
-          </div>
-
+        <div class="name">
+          SEOLHO ♡
         </div>
 
       </div>
 
     </div>
 
-
-    <div class="count" id="count">
-      5 candles are waiting for your wish ♡
-    </div>
-
-
-    <!-- WISH APPEARS BELOW, NOT ON TOP OF THE CAKE -->
-
-    <div class="wish" id="wish">
-
-      <h2>
-        Wish granted ♡
-      </h2>
-
-      <p>
-        ขอให้สิ่งที่เธออธิษฐานไว้<br>
-        ค่อย ๆ กลายเป็นจริงทีละอย่างนะ ♡
-        <br><br>
-        ขอให้ปีนี้เป็นปีที่ดีมาก ๆ<br>
-        และขอให้เธอมีความสุขในทุกวัน
-      </p>
-
-      <a href="letter.html" class="next-btn">
-        Read My Birthday Letter ♡
-      </a>
-
-    </div>
-
   </div>
 
 
-  <script>
+  <div class="count" id="count">
+    5 candles are waiting for your wish ♡
+  </div>
 
-    let candles = [false, false, false, false, false];
 
-    function blowCandle(number) {
+  <!-- WISH -->
 
-      const index = number - 1;
+  <div class="wish" id="wish">
 
-      if (candles[index]) {
-        return;
-      }
+    <h2>
+      Wish granted ♡
+    </h2>
 
-      candles[index] = true;
+    <p>
 
-      const candle =
-        document.querySelector(".c" + number);
+      ขอให้สิ่งที่เธออธิษฐานไว้<br>
 
-      candle.classList.add("off");
+      ค่อย ๆ กลายเป็นจริงทีละอย่างนะ ♡
 
-      const remaining =
-        candles.filter(c => !c).length;
+      <br><br>
 
-      const count =
-        document.getElementById("count");
+      ขอให้ปีนี้เป็นปีที่ดีมาก ๆ<br>
 
-      if (remaining > 0) {
+      และขอให้เธอมีความสุขในทุกวัน
 
-        count.innerHTML =
-          remaining +
-          " candles left ♡";
+    </p>
 
-      } else {
 
-        count.innerHTML =
-          "✨ You made your wish ✨";
+    <a href="letter.html" class="next-btn">
+      Read My Birthday Letter ♡
+    </a>
 
-        document.getElementById("wish")
-          .classList.add("show");
+  </div>
 
-        /* เลื่อนลงไปหาคำอวยพรอย่างนุ่ม ๆ
-           ไม่เด้งขึ้นมาบังเค้ก */
+</div>
 
-        setTimeout(() => {
 
-          document.getElementById("wish")
-            .scrollIntoView({
-              behavior: "smooth",
-              block: "center"
-            });
+<script>
 
-        }, 300);
+  let candles = [
+    false,
+    false,
+    false,
+    false,
+    false
+  ];
 
-      }
+
+  function blowCandle(number) {
+
+    const index = number - 1;
+
+    if (candles[index]) {
+      return;
+    }
+
+
+    candles[index] = true;
+
+
+    const candle =
+      document.querySelector(".c" + number);
+
+    candle.classList.add("off");
+
+
+    const remaining =
+      candles.filter(c => !c).length;
+
+
+    const count =
+      document.getElementById("count");
+
+
+    if (remaining > 0) {
+
+      count.innerHTML =
+        remaining +
+        " candles left ♡";
 
     }
 
-  </script>
+    else {
+
+      /*
+        ดับครบแล้ว
+        เอาข้อความ "หลับตา..." ออกทันที
+      */
+
+      document.getElementById("instruction")
+        .style.display = "none";
+
+
+      count.innerHTML =
+        "✨ You made your wish ✨";
+
+
+      document.getElementById("wish")
+        .classList.add("show");
+
+
+      /*
+        เลื่อนไปที่คำอวยพรอย่างนุ่ม ๆ
+        ไม่มีข้อความหลับตาขึ้นมาอีก
+      */
+
+      setTimeout(() => {
+
+        document.getElementById("wish")
+          .scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+      }, 300);
+
+    }
+
+  }
+
+</script>
 
 </body>
 </html>
